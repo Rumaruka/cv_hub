@@ -98,7 +98,7 @@ const langLinks = customLangLinks ?? allLangs.map(l => ({
 
 const profileLinks = allProfiles.map(p => ({
   id:     p.id,
-  label:  p.label,
+  label:  p.labels?.[lang] ?? p.label,
   href:   buildHref(p.slug, lang),
   active: p.slug === profile,
 }));

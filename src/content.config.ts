@@ -160,6 +160,8 @@ const profiles = defineCollection({
     profiles: z.array(z.object({
       id: z.string(),
       label: z.string(),
+      // Optional per-language labels, keyed by language id; falls back to `label`.
+      labels: z.record(z.string()).optional(),
       slug: z.string(),
       spec: z.string().nullable().optional().default(null),
     })),

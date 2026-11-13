@@ -1,13 +1,22 @@
 profiles:
   - id: default
     label: "Developer"
+    labels:
+      ru: "Разработчик"
+      en: "Developer"
     slug: ""
     spec: null
   - id: support
     label: "Tech Support"
+    labels:
+      ru: "Техподдержка"
+      en: "Tech Support"
     slug: "support"
     spec: support
   - id: moderator
     label: "Moderator"
+    labels:
+      ru: "Модератор"
+      en: "Moderator"
     slug: "moderator"
     spec: moderator
