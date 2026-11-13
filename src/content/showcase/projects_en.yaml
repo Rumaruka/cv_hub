@@ -1,79 +1,304 @@
 projects:
   - slug: thaumic-bases-unofficial
     order: 1
-    name: Thaumic Bases Unofficial
-    role: Maintainer / Developer
-    year: "2015"
-    description: "Porting and maintenance of the Thaumic Bases mod: bug fixes, updates for new platform versions, compatibility with other mods and user support."
+    name: "Thaumic/Thaumaturge Bases Unofficial"
+    role: "Maintainer / Developer"
+    year: "2018"
+    description: "Addon for Thaumcraft 6: porting, bug fixes, updates for new versions and user support."
     theme: blue
     featured: true
     platforms: [Minecraft, CurseForge]
-    tags: [java, minecraft, modding, open-source]
+    tags: [magic,thaumcraft,addon, java, modding]
     stack: [Java, Gradle, Git]
+    metrics:
+      - label: "Downloads"
+        value: "802.1K"
     links:
       - label: CurseForge
         url: https://www.curseforge.com/minecraft/mc-mods/thaumic-bases-unofficial
         type: store
-      - label: GitHub
-        url: https://github.com/Rumaruka
-        type: repo
-
-  - slug: vanillaplus
-    order: 2
-    name: VanillaPlus+
-    role: Author / Developer
-    year: ""
-    description: "Open-source Minecraft project written in Java."
-    theme: cyan
-    platforms: [Minecraft, CurseForge]
-    tags: [java, minecraft, modding, open-source]
-    stack: [Java, Git]
-    links:
-      - label: GitHub
-        url: https://github.com/Rumaruka
-        type: repo
 
   - slug: simple-grinder
-    order: 3
-    name: Simple Grinder
-    role: Author / Developer
-    year: ""
-    description: "Open-source Minecraft project written in Java."
-    theme: emerald
+    order: 2
+    name: "Simple Grinder"
+    role: "Author / Developer"
+    year: "2015"
+    description: "A simple ore grinder — a machine for processing resources."
+    theme: cyan
+    featured: true
     platforms: [Minecraft, CurseForge]
-    tags: [java, minecraft, modding, open-source]
-    stack: [Java, Git]
+    tags: [technology,processing, java, modding]
+    stack: [Java, Gradle, Git]
+    metrics:
+      - label: "Downloads"
+        value: "854.7K"
     links:
-      - label: GitHub
-        url: https://github.com/Rumaruka
-        type: repo
+      - label: CurseForge
+        url: https://www.curseforge.com/minecraft/mc-mods/simple-grinder
+        type: store
 
-  - slug: mekahardcore
-    order: 4
-    name: MekaHardcore
-    role: Author / Developer
-    year: ""
-    description: "Open-source Minecraft project written in Java."
-    theme: magenta
+  - slug: industrial-magic-crossover-ic2
+    order: 3
+    name: "Industrial Magic - Crossover IC2"
+    role: "Author / Developer"
+    year: "2018"
+    description: "Crossover addon between Thaumcraft 6 and IC2."
+    theme: emerald
+    featured: true
     platforms: [Minecraft, CurseForge]
-    tags: [java, minecraft, modding, open-source]
-    stack: [Java, Git]
+    tags: [thaumcraft,industrialcraft,addon, java, modding]
+    stack: [Java, Gradle, Git]
+    metrics:
+      - label: "Downloads"
+        value: "174.4K"
     links:
-      - label: GitHub
-        url: https://github.com/Rumaruka
-        type: repo
+      - label: CurseForge
+        url: https://www.curseforge.com/minecraft/mc-mods/im-crossover-ic2
+        type: store
+
+  - slug: vanillaplus
+    order: 4
+    name: "VanillaPlus +"
+    role: "Author / Developer"
+    year: "2018"
+    description: "Making the useless useful: extends vanilla items and resources."
+    theme: magenta
+    featured: true
+    platforms: [Minecraft, CurseForge]
+    tags: [vanilla,resources,world-gen, java, modding]
+    stack: [Java, Gradle, Git]
+    metrics:
+      - label: "Downloads"
+        value: "41.7K"
+    links:
+      - label: CurseForge
+        url: https://www.curseforge.com/minecraft/mc-mods/vanillaplusplus
+        type: store
+
+  - slug: rmk-theoneprobe-addon
+    order: 5
+    name: "RMK's The One Probe (TOP) Addon"
+    role: "Author / Developer"
+    year: "2024"
+    description: "The One Probe addon that shows information from different mods."
+    theme: blue
+    featured: true
+    platforms: [Minecraft, CurseForge]
+    tags: [addon,technology, java, modding]
+    stack: [Java, Gradle, Git]
+    metrics:
+      - label: "Downloads"
+        value: "30.3K"
+    links:
+      - label: CurseForge
+        url: https://www.curseforge.com/minecraft/mc-mods/rmk-s-theoneprobe-addon
+        type: store
+
+  - slug: ars-technic
+    order: 6
+    name: "Ars Technic"
+    role: "Author / Developer"
+    year: "2023"
+    description: "Addon for Ars Nouveau."
+    theme: cyan
+    featured: true
+    platforms: [Minecraft, CurseForge]
+    tags: [addon,magic,technology, java, modding]
+    stack: [Java, Gradle, Git]
+    metrics:
+      - label: "Downloads"
+        value: "25.4K"
+    links:
+      - label: CurseForge
+        url: https://www.curseforge.com/minecraft/mc-mods/ars-technic
+        type: store
+
+  - slug: risk-of-mine
+    order: 7
+    name: "Risk Of Mine"
+    role: "Author / Developer"
+    year: "2020"
+    description: "Minecraft, but Risk of Rain 2."
+    theme: emerald
+    featured: false
+    platforms: [Minecraft, CurseForge]
+    tags: [adventure,rpg, java, modding]
+    stack: [Java, Gradle, Git]
+    metrics:
+      - label: "Downloads"
+        value: "7.7K"
+    links:
+      - label: CurseForge
+        url: https://www.curseforge.com/minecraft/mc-mods/risk-of-mine
+        type: store
+
+  - slug: rf-converter
+    order: 8
+    name: "RF Converter"
+    role: "Author / Developer"
+    year: "2023"
+    description: "Converters between different energy types."
+    theme: magenta
+    featured: false
+    platforms: [Minecraft, CurseForge]
+    tags: [technology,energy, java, modding]
+    stack: [Java, Gradle, Git]
+    metrics:
+      - label: "Downloads"
+        value: "4.4K"
+    links:
+      - label: CurseForge
+        url: https://www.curseforge.com/minecraft/mc-mods/rf-converter
+        type: store
 
   - slug: coolest-hardcore
-    order: 5
-    name: Coolest Hardcore
-    role: Author / Developer
-    year: ""
-    description: "Open-source Minecraft project written in Java."
+    order: 9
+    name: "Coolest Hardcore"
+    role: "Author / Developer"
+    year: "2023"
+    description: "Changes the game for hardcore mode."
     theme: blue
+    featured: false
     platforms: [Minecraft, CurseForge]
-    tags: [java, minecraft, modding, open-source]
-    stack: [Java, Git]
+    tags: [hardcore,mobs,utility, java, modding]
+    stack: [Java, Gradle, Git]
+    metrics:
+      - label: "Downloads"
+        value: "2.3K"
     links:
-      - label: GitHub
-        url: https://github.com/Rumaruka
-        type: repo
+      - label: CurseForge
+        url: https://www.curseforge.com/minecraft/mc-mods/coolesthardcore
+        type: store
+
+  - slug: rmk-alpha-modpack
+    order: 10
+    name: "RMK Alpha Modpack"
+    role: "Author / Developer"
+    year: "2020"
+    description: "Modpack for Minecraft 1.15.2."
+    theme: cyan
+    featured: false
+    platforms: [Minecraft, CurseForge]
+    tags: [modpack,tech,magic, java, modding]
+    stack: [Java, Gradle, Git]
+    metrics:
+      - label: "Downloads"
+        value: "900"
+    links:
+      - label: CurseForge
+        url: https://www.curseforge.com/minecraft/modpacks/rmk-s-alpha-modpack
+        type: store
+
+  - slug: powercraft-new-live
+    order: 11
+    name: "PowerCraft: New Live"
+    role: "Maintainer / Developer"
+    year: "2019"
+    description: "Update and support for the PowerCraft mod."
+    theme: emerald
+    featured: false
+    platforms: [Minecraft, CurseForge]
+    tags: [technology,redstone,api, java, modding]
+    stack: [Java, Gradle, Git]
+    metrics:
+      - label: "Downloads"
+        value: "694"
+    links:
+      - label: CurseForge
+        url: https://www.curseforge.com/minecraft/mc-mods/powercraft-new-live
+        type: store
+
+  - slug: mekahardcore
+    order: 12
+    name: "MekaHardcore"
+    role: "Author / Developer"
+    year: "2025"
+    description: "A complication addon for Mekanism."
+    theme: magenta
+    featured: false
+    platforms: [Minecraft, CurseForge]
+    tags: [addon,mekanism,technology, java, modding]
+    stack: [Java, Gradle, Git]
+    metrics:
+      - label: "Downloads"
+        value: "584"
+    links:
+      - label: CurseForge
+        url: https://www.curseforge.com/minecraft/mc-mods/mekahardcore
+        type: store
+
+  - slug: science-island-core
+    order: 13
+    name: "Science Island Core"
+    role: "Author / Developer"
+    year: "2021"
+    description: "Science Island Core mod."
+    theme: blue
+    featured: false
+    platforms: [Minecraft, CurseForge]
+    tags: [addon,library, java, modding]
+    stack: [Java, Gradle, Git]
+    metrics:
+      - label: "Downloads"
+        value: "323"
+    links:
+      - label: CurseForge
+        url: https://www.curseforge.com/minecraft/mc-mods/sicore
+        type: store
+
+  - slug: simple-grinder-hytale
+    order: 14
+    name: "Simple Grinder (Hytale)"
+    role: "Author / Developer"
+    year: "2026"
+    description: "A crusher for ores in Hytale."
+    theme: cyan
+    featured: false
+    platforms: [Hytale, CurseForge]
+    tags: [hytale,ores,gameplay, java, modding]
+    stack: [Java, Gradle, Git]
+    metrics:
+      - label: "Downloads"
+        value: "297"
+    links:
+      - label: CurseForge
+        url: https://www.curseforge.com/hytale/mods/simple-grinder
+        type: store
+
+  - slug: industrial-magic-enderio
+    order: 15
+    name: "Industrial Magic - EnderIO"
+    role: "Author / Developer"
+    year: "2021"
+    description: "Ender IO + Thaumcraft crossover."
+    theme: emerald
+    featured: false
+    platforms: [Minecraft, CurseForge]
+    tags: [thaumcraft,enderio,addon, java, modding]
+    stack: [Java, Gradle, Git]
+    metrics:
+      - label: "Downloads"
+        value: "161"
+    links:
+      - label: CurseForge
+        url: https://www.curseforge.com/minecraft/mc-mods/im-enderio
+        type: store
+
+  - slug: rmk-engine
+    order: 16
+    name: "RMK Engine"
+    role: "Author / Developer"
+    year: "2020"
+    description: "API for mods by Rumaruka."
+    theme: magenta
+    featured: false
+    platforms: [Minecraft, CurseForge]
+    tags: [api,library, java, modding]
+    stack: [Java, Gradle, Git]
+    metrics:
+      - label: "Downloads"
+        value: "86"
+    links:
+      - label: CurseForge
+        url: https://www.curseforge.com/minecraft/mc-mods/rmkengine
+        type: store
