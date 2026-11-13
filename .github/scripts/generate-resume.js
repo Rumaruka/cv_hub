@@ -179,7 +179,7 @@ function generateDocx(cv, lang = 'en') {
   if (cv.contacts?.length) {
     for (const c of cv.contacts) {
       const display = c.url
-        .replace(/^mailto:/, '')
+        .replace(/^(mailto|tel):/, '')
         .replace(/^https?:\/\/(www\.)?/, '')
         .replace(/\/$/, '');
       children.push(

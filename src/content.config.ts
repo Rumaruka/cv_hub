@@ -29,8 +29,8 @@ const linkSchema = z.object({
     .default('')
     .refine(
       (v) =>
-        v === '' || v.startsWith('https://') || v.startsWith('http://') || v.startsWith('mailto:'),
-      { message: 'url must start with https://, http://, or mailto:' }
+        v === '' || v.startsWith('https://') || v.startsWith('http://') || v.startsWith('mailto:') || v.startsWith('tel:'),
+      { message: 'url must start with https://, http://, mailto:, or tel:' }
     ),
 });
 
