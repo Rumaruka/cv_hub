@@ -302,3 +302,75 @@ projects:
       - label: CurseForge
         url: https://www.curseforge.com/minecraft/mc-mods/rmkengine
         type: store
+
+  - slug: lightningcraft
+    order: 17
+    name: "LightningCraft"
+    role: "Contributed as a developer"
+    year: "2015"
+    description: "Harnessing the power of lightning to reshape the world. Original author: SBlectric."
+    theme: blue
+    platforms: [Minecraft, CurseForge]
+    tags: [technology,energy,dimensions, java, modding]
+    stack: [Java, Gradle, Git]
+    metrics:
+      - label: "Project downloads"
+        value: "1.8M"
+    links:
+      - label: CurseForge
+        url: https://www.curseforge.com/minecraft/mc-mods/lightningcraft
+        type: store
+
+  - slug: difficult-life
+    order: 18
+    name: "Difficult Life"
+    role: "Contributed as a developer"
+    year: "2015"
+    description: "Increases the difficulty of the game. Original author: Forge_User_59925105."
+    theme: cyan
+    platforms: [Minecraft, CurseForge]
+    tags: [miscellaneous,difficulty, java, modding]
+    stack: [Java, Gradle, Git]
+    metrics:
+      - label: "Project downloads"
+        value: "212.3K"
+    links:
+      - label: CurseForge
+        url: https://www.curseforge.com/minecraft/mc-mods/difficult-life
+        type: store
+
+  - slug: morechickens
+    order: 19
+    name: "MoreChickens"
+    role: "Contributed as a developer"
+    year: "2021"
+    description: "More chickens and farming. Original author: cnlimiter."
+    theme: emerald
+    platforms: [Minecraft, CurseForge]
+    tags: [mobs,farming, java, modding]
+    stack: [Java, Gradle, Git]
+    metrics:
+      - label: "Project downloads"
+        value: "49.4K"
+    links:
+      - label: CurseForge
+        url: https://www.curseforge.com/minecraft/mc-mods/morechickens
+        type: store
+
+  - slug: electro-magic-tools-ic2-classic
+    order: 20
+    name: "Electro-Magic Tools - IC2 Classic"
+    role: "Contributed as a developer"
+    year: "2019"
+    description: "A bridge between magic and industry (Thaumcraft and IC2 Classic). Original author: weissmoon."
+    theme: magenta
+    platforms: [Minecraft, CurseForge]
+    tags: [industrialcraft,thaumcraft,magic, java, modding]
+    stack: [Java, Gradle, Git]
+    metrics:
+      - label: "Project downloads"
+        value: "25.4K"
+    links:
+      - label: CurseForge
+        url: https://www.curseforge.com/minecraft/mc-mods/electro-magic-tools-ic2-classic
+        type: store
