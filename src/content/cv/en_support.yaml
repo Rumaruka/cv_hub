@@ -1,0 +1,60 @@
+name: Vladimir Prikhodko
+title: Technical Support Specialist · Service Desk · IT Support
+
+summary: >
+  Technical support (Service Desk) specialist with 5 years of experience supporting
+  IT infrastructure and customer-facing systems. Proficient in Incident Management
+  and Request Management. Set up corporate services (CRM, IP telephony, email),
+  worked with ticket databases and met SLAs. I diagnose complex technical problems,
+  escalate tasks and maintain technical documentation. Focused on automating
+  support processes and improving the quality of user interaction.
+
+achievements:
+  - Handled up to 250+ requests per day
+  - Set up IT infrastructure for new users — email, domains, CRM, IP telephony, work chats
+  - Tracked task completion and met SLA targets
+  - Experience on both 1st and 2nd support lines
+
+skills:
+  - group: Support
+    items: [Technical Support, Service Desk, Help Desk, IT Support, 1st line, 2nd line, Customer Support]
+
+  - group: Processes
+    items: [ITSM, Incident Management, Request Management, SLA, Escalation]
+
+  - group: Systems
+    items: [CRM systems, AmoCRM, Atlassian Jira, Atlassian Confluence, IP telephony]
+
+  - group: Administration
+    items: [System administration, PC setup, Software setup, Website administration, Information security]
+
+  - group: Soft skills
+    items: [Working with users, Technical documentation, Time management, Handling large volumes of information]
+
+  - group: Languages
+    items: [Russian — native, English — B2]
+
+experience:
+
+  - company: Radist Online
+    role: Technical Support Specialist
+    period: Sep 2025 — Mar 2026
+    description:
+      - Handled user and customer requests through AmoCRM
+      - Diagnosed and resolved users' technical problems
+      - Analyzed incidents and found solutions
+      - Escalated complex technical tasks to the relevant specialists
+      - Tracked task completion and SLA
+      - Advised users on how to use the platform
+      - Maintained the ticket database and documentation
+    stack: [AmoCRM, Service Desk, SLA, Incident Management]
+
+  - company: CENTURY 21
+    role: Specialist, Business Support Department
+    period: May 2020 — Dec 2024
+    description:
+      - Service Desk — received and processed requests, diagnosed and fixed technical problems, advised on internal services, coordinated tasks between specialists
+      - Service administration — set up and maintained corporate services, worked with CRM, managed user accounts, supported communication systems
+      - Set up IT infrastructure for new users — corporate email, domains, CRM, IP telephony, work chats and services
+      - Process work — structured tickets, tracked task completion, prepared reports, maintained technical documentation
+    stack: [CRM, IP telephony, Service Desk, Administration]

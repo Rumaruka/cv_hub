@@ -1,0 +1,66 @@
+name: Vladimir Prikhodko
+title: Content Moderator · Community Moderator · Trust & Safety
+
+summary: >
+  Moderation and Trust & Safety specialist with 11 years of experience managing large
+  online communities. I detect harmful content, prevent conflicts from escalating
+  and keep communities healthy. Worked with audiences of 20,000+ people in real time.
+  I respond quickly to incidents, enforce platform rules and keep violation reports.
+
+achievements:
+  - Moderated live-stream audiences of 1,500 to 20,000 concurrent users
+  - Kept moderation stable in an active gaming community
+  - 11+ years moderating chats, forums and game servers
+  - Detected and banned rule-breakers, prevented spam, insults and toxic behavior
+
+skills:
+  - group: Moderation
+    items: [Content Moderation, Chat Moderation, Live Moderation, Forum Moderation, User Generated Content, Content control]
+
+  - group: Trust & Safety
+    items: [Trust & Safety, Policy Enforcement, Fraud Detection, Spam Detection, Escalation]
+
+  - group: Community
+    items: [Community Management, Community Support, Consulting]
+
+  - group: Platforms
+    items: [YouTube, Twitch, Telegram]
+
+  - group: Communication
+    items: [Business communication, Business correspondence, Business ethics, Administration]
+
+  - group: Languages
+    items: [Russian — native, English — B2]
+
+experience:
+
+  - company: YouTube channel VitecPlay
+    role: Moderator
+    period: Apr 2019 — Present
+    description:
+      - Monitored chat during live streams
+      - Moderated user-generated content
+      - Detected platform rule violations
+      - Handled user complaints
+      - Prevented conflicts in the community
+    stack: [YouTube, Live Moderation]
+
+  - company: YouTube channel MrLololoshka
+    role: Moderator
+    period: Jun 2017 — Present
+    description:
+      - Moderated chats and user messages during streams and publications
+      - Enforced community rules, detected and banned violators
+      - Prevented spam, insults and toxic behavior
+      - Kept a positive atmosphere and responded quickly to conflicts
+      - Worked with stream audiences of 1,500 – 20,000 concurrent users
+    stack: [YouTube, Chat Moderation, Community Management]
+
+  - company: StreamCraft
+    role: Moderator, Senior Moderator
+    period: Jun 2014 — Aug 2016
+    description:
+      - Moderated players on a game server and enforced the rules
+      - Reviewed user complaints and banned violators
+      - Supported players and helped solve their problems
+    stack: [Game Moderation, Policy Enforcement]

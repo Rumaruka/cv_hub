@@ -1,13 +1,13 @@
 profiles:
   - id: default
-    label: "Generalist"
+    label: "Developer"
     slug: ""
     spec: null
-  - id: devops
-    label: "DevOps"
-    slug: "devops"
-    spec: devops
-  - id: gamedev
-    label: "Game Developer"
-    slug: "gamedev"
-    spec: gamedev
+  - id: support
+    label: "Tech Support"
+    slug: "support"
+    spec: support
+  - id: moderator
+    label: "Moderator"
+    slug: "moderator"
+    spec: moderator

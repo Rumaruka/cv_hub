@@ -1,0 +1,3199 @@
+diff --git a/src/components/Layout.astro b/src/components/Layout.astro
+index 14a09e8..d271fbb 100644
+--- a/src/components/Layout.astro
++++ b/src/components/Layout.astro
+@@ -116,7 +116,7 @@ const upstreamGit = 'https://github.com/KeeGooRoomiE/cv_hub';
+ // Derived from GITHUB_REPOSITORY (same as siteUrl above) instead of hardcoded
+ // — a fork's footer credit points at itself, not at the original repo.
+ const authorGit = repo ? `https://github.com/${repo}` : upstreamGit;
+-const authorGitHubPage = owner ? `https://github.com/${owner}/` : 'https://github.com/KeeGooRoomiE/';
++const authorGitHubPage = owner ? `https://github.com/${owner}/` : 'https://github.com/Rumaruka/';
+ // "Made with CV Hub" always targets upstreamGit (see below) — on the
+ // upstream repo itself that's the same URL as the GitHub link right next to
+ // it, which is just noise (two links, same href, different labels). Only
+@@ -286,7 +286,7 @@ const jsonLdSafe = jsonLd ? JSON.stringify(jsonLd).replace(/</g, '\\u003c') : nu
+     <footer class="footer">
+       <div class="container footer__inner">
+         <span><a href={authorGitHubPage} target="_blank" rel="noopener" class="footer__link">
+-          Alexander Gusarov
++          Vladimir Prikhodko
+         </a> © {currentYear}</span>
+         <span class="footer__links">
+           {showFooterCredit && (
+diff --git a/src/content/cv/en.yaml b/src/content/cv/en.yaml
+index e309de4..dfd4b9f 100644
+--- a/src/content/cv/en.yaml
++++ b/src/content/cv/en.yaml
+@@ -1,178 +1,72 @@
+-name: Alexander Gusarov
+-title: Software Engineer — DevOps · Fullstack · GameDev
++name: Vladimir Prikhodko
++title: Software Developer · Java · Open Source
+ 
+ summary: >
+-  Software engineer with 14+ years across DevOps, fullstack and game development.
+-  Managed infrastructure for 750+ servers, shipped products with 100M+ users,
+-  built everything from CI/CD pipelines to multiplayer backends.
+-  I close the full cycle — architecture, code, deployment — and I actually enjoy all of it.
++  Software Developer with 10 years of experience building and maintaining open-source projects.
++  I specialize in server-side modules, plugins and API integration in Java.
++  Projects with 1M+ downloads on CurseForge. Legacy code refactoring, performance
++  optimization, event-based architecture. I write clean, maintainable code
++  and care about the open-source ecosystem.
+ 
+ contacts:
+   - label: Email
+-    url: mailto:spartan.dgs.121@icloud.com
++    url: mailto:rumarukakunnya@gmail.com
+   - label: GitHub
+-    url: https://github.com/KeeGooRoomiE
+-  - label: Telegram
+-    url: https://t.me/spartan121
+-  - label: Upwork
+-    url: https://www.upwork.com/freelancers/~01764e57e0646f2fbf
+-  - label: LinkedIn
+-    url: https://www.linkedin.com/in/alexander-gusarov-4a08911a2/
+-  - label: Habr
+-    url: https://career.habr.com/xandergusarov
++    url: https://github.com/Rumaruka
++  - label: CurseForge
++    url: https://www.curseforge.com/minecraft/mc-mods/thaumic-bases-unofficial
++  - label: Setka
++    url: https://set.ki/account/iUSWToy
++
++location: Chelyabinsk, Russia
++timezone: Remote
+ 
+ achievements:
+-  - Operated and automated infrastructure for 750+ Linux servers (Selectel VPS and bare metal) with 99.9% uptime
+-  - Reduced deploy time from 8 to 2 minutes (−75%) and AWS costs from $550 to $300/month
+-  - Sand Balls — contributed to a mobile game with 100M+ downloads and top App Store rankings
+-  - Bhop Jump — built multiplayer backend generating $160K+ revenue in the first quarter
+-  - Lana and Ronen — 1M+ downloads mobile title
+-  - Upwork Top Rated Plus — top 5% of freelancers with 20+ successful projects
++  - Projects with 1M+ downloads on CurseForge
++  - 10+ years developing and maintaining open-source projects
++  - Ported and maintain Thaumic Bases Unofficial across new platform versions
++  - Maintain cross-mod compatibility and handle user reports through GitHub Issues
+ 
+ skills:
+-  - group: Languages
+-    items: [Go, C#, JavaScript, TypeScript, Dart, Swift, Java, GML]
+-
+-  - group: Backend & APIs
+-    items: [Node.js, REST APIs, WebSockets, microservices, EF Core]
+-
+-  - group: Frontend
+-    items: [React, Angular, HTML, CSS, Tailwind]
++  - group: Programming Languages
++    items: [Java, Kotlin, Python, C#, C++, Rust, JavaScript, PHP, Ruby]
+ 
+-  - group: DevOps & Infrastructure
+-    items: [Kubernetes, Helm, Docker, Terraform, Ansible, GitLab CI, GitHub Actions, Jenkins]
++  - group: Mods and Plugins
++    items: [Plugin Development, Minecraft Modding, NeoForge, API integration, Event-based architecture]
+ 
+-  - group: Cloud
+-    items: [AWS — EC2, S3, RDS, VPC, IAM, ALB, Yandex Cloud, Selectel]
++  - group: Tooling
++    items: [Git, GitHub, Gradle, Maven, Docker Compose, REST API, MySQL, Node.js]
+ 
+-  - group: Observability
+-    items: [Prometheus, VictoriaMetrics, Grafana, Loki, Alertmanager, CloudWatch]
+-
+-  - group: Databases
+-    items: [PostgreSQL, ClickHouse, MySQL, MongoDB, Redis, RabbitMQ]
+-
+-  - group: Game Development
+-    items: [Unity, GameMaker, multiplayer systems, monetization, game design]
++  - group: Practices
++    items: [OOP, Refactoring, Debugging, Code Review, Open Source]
+ 
+   - group: Platforms
+-    items: [Linux, Web, iOS, Android, macOS]
++    items: [Unity, Android, HTML]
+ 
+-  - group: Languages (spoken)
+-    items: [Russian — Native, English — IELTS 7.0 (B2)]
++  - group: Languages
++    items: [Russian — native, English — B2]
+ 
+ experience:
+ 
+-  - company: InfoScale
+-    role: DevOps Engineer / Software Engineer
+-    period: Dec 2024 — Jan 2026
+-    description:
+-      - Monitored and maintained 750+ Linux servers (Selectel VPS and bare metal)
+-        — network interfaces, ports, access management, incident response
+-      - Managed Kubernetes clusters on Yandex Cloud and self-hosted
+-        (GitLab, Matrix, Keycloak, Vault); wrote and maintained Helm charts
+-      - Built Terraform infrastructure for ~20 AWS services ($550 → $300/month);
+-        wrote custom modules, provisioned ClickHouse; Ansible for per-instance configuration
+-      - Optimized CI/CD across multiple repos (GitHub Actions + GitLab CI);
+-        unified pipeline structure reduced deploy time from 8 to 2 minutes
+-      - Built observability stack from scratch — VictoriaMetrics probes, Prometheus alerting,
+-        custom Grafana dashboards; Alertmanager integrated with Telegram and Matrix
+-      - Designed and developed SaaS monitoring service end-to-end (Go + Gin/GORM + React)
+-        — ping, domain, SSL checks with configurable intervals (10s–24h); deployed in-cluster on Kubernetes
+-      - Responded to SSH brute-force attacks via KVM live access,
+-        port blocking, user rotation, and timeout configuration
+-      - Grew infrastructure team from 3 to 6 engineers; mentored 3 junior members
+-    stack: [Kubernetes, Helm, Docker, Terraform, Ansible, AWS, Yandex Cloud, GitLab CI, GitHub Actions, Go, React, PostgreSQL, ClickHouse, VictoriaMetrics, Grafana]
+-
+-  - company: SOFTINTERMOB
+-    role: Unity Developer
+-    period: Nov 2023 — Jul 2024
+-    description:
+-      - Built two mobile applications from Figma designs to App Store release — full cycle
+-      - Integrated Firebase and third-party SDKs, resolved compatibility issues on iOS/Android
+-      - Refactored legacy codebase, improved stability and performance
+-    stack: [Unity, C#, Firebase, iOS, Android]
+-
+-  - company: AZNResearch
+-    role: Fullstack Developer
+-    period: Jul 2022 — Oct 2023
+-    description:
+-      - Designed frontend architecture for internal government and enterprise products using Angular + Tailwind
+-      - Developed backend microservices with .NET Core + EF Core, REST APIs and LINQ queries
+-      - Introduced Git workflow, code reviews and CI pipelines, boosted team productivity by 25%
+-    stack: [Angular, Tailwind, C#, .NET Core, SQL Server, MySQL]
+-
+-  - company: Neosight
+-    role: Game Designer
+-    period: Nov 2021 — Feb 2022
++  - company: Open Source
++    role: Open Source Developer (Independent Software Developer)
++    period: Dec 2015 — Present
+     description:
+-      - Wrote GDDs for 6 mobile games — core mechanics, monetization, progression systems
+-      - Ran concept validation experiments, grew installs 30x, CTR from 0.4% to 5%
+-      - Balanced levels and game curves using retention, difficulty and drop-off metrics
+-    stack: [Unity, Game Design, Analytics]
+-
+-  - company: Udemy
+-    role: Unity Developer
+-    period: Mar 2021 — Oct 2021
+-    description:
+-      - Built a German language learning app from scratch — 22 categories, ~3000 flashcards
+-      - Optimized architecture and data storage, reduced app size from ~3GB to 400MB
+-    stack: [Unity, C#, JSON, iOS, Android]
+-
+-  - company: Popside Games
+-    role: Level Designer
+-    period: Jul 2020 — Oct 2020
+-    description:
+-      - Designed and balanced 3000+ levels for Match-3 and Solitaire under tight production schedule
+-      - Improved level completion rate by 15% through iterative testing
+-    stack: [Game Design, Level Design]
+-
+-  - company: SayGames
+-    role: Game Designer
+-    period: Feb 2020 — Jun 2020
+-    description:
+-      - Designed mechanics and levels for hyper-casual prototypes
+-      - Contributed to Sand Balls (100M+ downloads) and FlowerKing
+-      - Improved D1-retention by 10% through retention/drop-off metric iterations
+-    stack: [Game Design, Unity]
+-
+-  - company: Goodline
+-    role: Software Engineer
+-    period: Nov 2019 — Jan 2020
+-    description:
+-      - Developed and adapted internal React interfaces for mobile devices
+-      - Improved performance by 25% through component optimization
+-    stack: [React, JavaScript]
+-
+-  - company: Project Tech
+-    role: Software Engineer / Co-Founder
+-    period: Feb 2017 — Oct 2019
+-    description:
+-      - Co-founded a development studio — hired developers, negotiated with clients, signed contracts
+-      - Acted as second engineer and tech lead — architecture decisions through to production code
+-      - Shipped 10+ products — games, mobile apps and business software for restaurants, delivery services and VR
+-      - Built multiplayer backend for Bhop Jump with a team of two — P2P + dedicated servers up to 16 players, $160K revenue in Q1
+-      - Pitched publishing deals to indie developers — early experience in product and business development
+-    stack: [Unity, C#, React, React Native, Xamarin, Node.js, WebSockets, Docker, VR]
++      - Develop plugins and modules in Java, working with APIs and event-based architecture
++      - Ported and maintain Thaumic Bases Unofficial — bug fixes, updates for new versions, user support
++      - Maintain and refactor existing code, fix bugs and optimize performance
++      - Keep compatibility between mods
++      - Work with users and triage GitHub issues
++      - Other projects — VanillaPlus+, Simple Grinder, MekaHardcore, Coolest Hardcore
++    stack: [Java, Git, GitHub, Plugin architectures, API integration]
+ 
+ education:
+-  - institution: Udemy
+-    degree: Linux Foundation Computer Science
+-    period: "2025"
+-
+-  - institution: Udemy
+-    degree: Certified Kubernetes Administrator
+-    period: "2025"
+-
+-  - institution: Wargaming Forge
+-    degree: Level Designer & Balancing
++  - institution: Tomsk State University of Control Systems and Radioelectronics (TUSUR), Surgut branch
++    degree: Incomplete higher education
+     period: "2020"
+ 
+-  - institution: Siberian Polytechnic University
+-    degree: Faculty of Information Technology
+-    period: 2017–2018
+-
+ languages:
+   - language: Russian
+     level: Native
+   - language: English
+-    level: IELTS 7.0 (B2)
+\ No newline at end of file
++    level: B2
+diff --git a/src/content/cv/en_devops.yaml b/src/content/cv/en_devops.yaml
+deleted file mode 100644
+index 47fe48e..0000000
+--- a/src/content/cv/en_devops.yaml
++++ /dev/null
+@@ -1,169 +0,0 @@
+-name: Alexander Gusarov
+-title: DevOps / Infrastructure Engineer
+-
+-summary: "DevOps engineer with 2 years of hands-on production experience in Kubernetes, Linux server management (750+ servers via Ansible), IaC on AWS, and observability from scratch. Scripting and debugging skills from prior dev work help diagnose incidents faster and communicate with dev teams without friction."
+-
+-contacts:
+-  - label: Email
+-    url: mailto:spartan.dgs.121@icloud.com
+-  - label: GitHub
+-    url: https://github.com/KeeGooRoomiE
+-  - label: Telegram
+-    url: https://t.me/spartan121
+-  - label: Upwork
+-    url: https://www.upwork.com/freelancers/~01764e57e0646f2fbf
+-  - label: LinkedIn
+-    url: https://www.linkedin.com/in/alexander-gusarov-4a08911a2/
+-  - label: Habr
+-    url: https://career.habr.com/xandergusarov
+-
+-achievements:
+-  - Automated infrastructure management for 750+ Linux servers (Selectel VPS + bare metal) using Ansible playbooks and Kubernetes, reducing manual operations by ~80%
+-  - Reduced deployment time from 8 to 2 minutes (−75%) by optimizing GitLab CI caching, build parallelization, and Docker layer structure
+-  - Reduced MTTR by 60% through centralized monitoring stack (Prometheus, Grafana, AlertManager)
+-  - Reduced Docker image size from 500MB to 200MB by switching to Alpine base, multi-stage builds, and removing debug tools from production images
+-  - Replaced manual service health checks with automated SaaS monitoring service (Go + PostgreSQL + React) supporting configurable check intervals (10s–24h)
+-  - Responded to production incidents including SSH brute-force attacks with 1.5–2 minute SLA via KVM live access and automated blocking
+-
+-skills:
+-  - group: Orchestration
+-    items:
+-      - Kubernetes
+-      - Helm
+-      - Docker
+-
+-  - group: IaC & Automation
+-    items:
+-      - Terraform
+-      - Ansible
+-
+-  - group: CI/CD
+-    items:
+-      - GitLab CI
+-      - GitHub Actions
+-      - Jenkins
+-
+-  - group: Observability
+-    items:
+-      - Prometheus
+-      - VictoriaMetrics
+-      - Grafana
+-      - Loki
+-      - Alertmanager
+-      - CloudWatch
+-
+-  - group: Cloud
+-    items:
+-      - AWS — EC2
+-      - S3
+-      - RDS
+-      - VPC
+-      - IAM
+-      - ALB
+-
+-  - group: Databases
+-    items:
+-      - PostgreSQL
+-      - ClickHouse
+-      - MySQL
+-      - Redis
+-      - MongoDB
+-
+-  - group: Programming
+-    items:
+-      - Go
+-      - Python
+-      - Bash
+-
+-  - group: Platforms
+-    items:
+-      - Linux
+-      - AWS
+-      - Yandex Cloud
+-      - Selectel
+-
+-  - group: Languages (spoken)
+-    items:
+-      - Russian — Native
+-      - English — B2
+-
+-experience:
+-
+-  - company: InfoScale
+-    role: DevOps Engineer
+-    period: Dec 2024 — Jan 2026
+-    description:
+-      - Monitored and maintained 750+ Linux servers (Selectel VPS and bare metal) — network interfaces, port configuration, SSH access management, and incident response
+-      - Deployed and maintained Kubernetes clusters on Yandex Cloud and self-hosted infrastructure (GitLab, Matrix, Keycloak, Vault); wrote Helm charts for internal services and adapted community charts for production use
+-      - Built Terraform infrastructure for ~20 AWS services, reducing monthly costs from $550 to $300; wrote custom modules for repeatable deployments, provisioned ClickHouse clusters; used Ansible for per-instance configuration and secrets management
+-      - Optimized CI/CD pipelines across multiple repos (GitHub Actions + GitLab CI); unified pipeline structure, added caching and build parallelization, reduced deploy time from 8 to 2 minutes
+-      - Built observability stack from scratch using VictoriaMetrics for metrics storage, Prometheus for scraping and alerting, custom Grafana dashboards for service health visualization; integrated AlertManager with Telegram and Matrix for incident notifications
+-      - Developed and deployed SaaS monitoring service (Go + Gin/GORM + React) with ping, domain, and SSL checks; configurable intervals from 10 seconds to 24 hours
+-      - Responded to production incidents including SSH brute-force attacks via KVM live access; blocked malicious IPs, rotated compromised credentials, configured fail2ban and SSH timeouts
+-      - Grew infrastructure team from 3 to 6 engineers; mentored 3 junior members on Kubernetes basics, GitLab CI best practices, and incident response procedures
+-    stack:
+-      - Kubernetes
+-      - Helm
+-      - Docker
+-      - Terraform
+-      - Ansible
+-      - AWS
+-      - Yandex Cloud
+-      - GitLab CI
+-      - GitHub Actions
+-      - Go
+-      - PostgreSQL
+-      - ClickHouse
+-      - VictoriaMetrics
+-      - Grafana
+-
+-  - company: AZNResearch
+-    role: Fullstack Engineer
+-    period: Jul 2022 — Oct 2023
+-    description:
+-      - Developed backend services with .NET Core + EF Core; built REST APIs for internal government and enterprise systems
+-      - Introduced Git workflow, GitLab CI pipelines and Docker for dev environments
+-      - Improved team productivity by ~25% through code reviews, CI automation, and knowledge sharing
+-    stack:
+-      - C#
+-      - .NET Core
+-      - SQL Server
+-      - MySQL
+-      - Angular
+-      - Docker
+-      - GitLab CI
+-
+-  - company: Project Tech
+-    role: Software Engineer / Co-Founder
+-    period: Feb 2017 — Oct 2019
+-    description:
+-      - Built multiplayer backend for Bhop Jump (on-prem master server + Google Cloud); P2P + dedicated servers supporting up to 16 players
+-      - Delivered 10+ production projects including mobile games, web apps, and business software
+-      - Deployed services using Docker; set up macOS VMs for iOS build pipelines
+-    stack:
+-      - Node.js
+-      - WebSockets
+-      - Docker
+-      - React
+-      - C#
+-      - Google Cloud
+-      - Firebase
+-
+-education:
+-  - institution: Udemy
+-    degree: Linux Foundation Computer Science
+-    period: "2025"
+-
+-  - institution: Udemy
+-    degree: Certified Kubernetes Administrator
+-    period: "2025"
+-
+-  - institution: Siberian Polytechnic University
+-    degree: Faculty of Information Technology
+-    period: 2017–2018
+-
+-languages:
+-  - language: Russian
+-    level: Native
+-  - language: English
+-    level: IELTS 7.0 (B2)
+diff --git a/src/content/cv/en_gamedev.yaml b/src/content/cv/en_gamedev.yaml
+deleted file mode 100644
+index f1efe46..0000000
+--- a/src/content/cv/en_gamedev.yaml
++++ /dev/null
+@@ -1,119 +0,0 @@
+-name: Alexander Gusarov
+-title: Game Developer — Unity · GameMaker · Level Design
+-
+-summary: >
+-  Game developer who's worked both sides — design and engineering.
+-  Shipped hyper-casual hits, built multiplayer backends, designed thousands of levels.
+-  Real products, real numbers.
+-
+-contacts:
+-  - label: Email
+-    url: mailto:spartan.dgs.121@icloud.com
+-  - label: GitHub
+-    url: https://github.com/KeeGooRoomiE
+-  - label: Telegram
+-    url: https://t.me/spartan121
+-  - label: Upwork
+-    url: https://www.upwork.com/freelancers/~01764e57e0646f2fbf
+-  - label: LinkedIn
+-    url: https://www.linkedin.com/in/alexander-gusarov-4a08911a2/
+-  - label: Habr
+-    url: https://career.habr.com/xandergusarov
+-
+-achievements:
+-  - Sand Balls — level design and mechanics contribution to a 100M+ downloads mobile hit
+-  - Bhop Jump — built multiplayer backend generating $160K+ revenue in the first quarter
+-  - Lana and Ronen — 1M+ downloads mobile title
+-  - Designed and balanced 3000+ levels across Match-3 and Solitaire mobile games
+-  - Upwork Top Rated Plus — top 5% of freelancers with 20+ successful projects
+-
+-skills:
+-  - group: Game Development
+-    items: [Unity, GameMaker Studio, C#, GML, game design, level design, monetization]
+-
+-  - group: Multiplayer & Backend
+-    items: [Node.js, WebSockets, multiplayer architecture, P2P networking, dedicated servers]
+-
+-  - group: Frontend & Mobile
+-    items: [React, React Native, iOS, Android]
+-
+-  - group: Tools & Platforms
+-    items: [Firebase, Figma, Git, Docker, Google Cloud]
+-
+-  - group: Languages (spoken)
+-    items: [Russian — Native, English — IELTS 7.0 (B2)]
+-
+-experience:
+-
+-  - company: Project Tech
+-    role: Software Engineer / Co-Founder
+-    period: Feb 2017 — Oct 2019
+-    description:
+-      - Co-founded a game development studio — hired developers, negotiated with clients, signed contracts
+-      - Designed and built multiplayer backend for Bhop Jump with one other engineer
+-        — P2P + dedicated servers up to 16 players, $160K+ revenue in Q1
+-      - Shipped Lana and Ronen — 1M+ downloads mobile title
+-      - Delivered 10+ products including games, mobile apps and business software
+-      - Acted as tech lead — architecture decisions through to production code
+-    stack: [Unity, C#, GameMaker, Node.js, WebSockets, React, React Native, Docker, Google Cloud, Firebase]
+-
+-  - company: SayGames
+-    role: Game Designer / Level Designer
+-    period: Feb 2020 — Jun 2020
+-    description:
+-      - Contributed to Sand Balls (100M+ downloads) — designed levels and core mechanics,
+-        collaborated with devs on prop creation and placement
+-      - Contributed to FlowerKing — same role, mechanics and level design
+-      - Improved D1-retention by 10% through iterative metric-driven design
+-    stack: [Unity, Game Design, Level Design, Analytics]
+-
+-  - company: Popside Games
+-    role: Level Designer
+-    period: Jul 2020 — Oct 2020
+-    description:
+-      - Designed and balanced 3000+ levels for Match-3 and Solitaire under tight production schedule
+-      - Improved level completion rate by 15% through iterative testing
+-    stack: [Game Design, Level Design]
+-
+-  - company: Udemy
+-    role: Unity Developer (Freelance)
+-    period: Mar 2021 — Oct 2021
+-    description:
+-      - Built a German language learning app from scratch as a freelance project
+-        — 22 categories, ~3000 flashcards
+-      - Optimized architecture and data storage, reduced app size from ~3GB to 400MB
+-    stack: [Unity, C#, JSON, iOS, Android]
+-
+-  - company: Neosight
+-    role: Game Designer / Level Designer
+-    period: Nov 2021 — Feb 2022
+-    description:
+-      - Wrote GDDs for 6 mobile games — core mechanics, monetization, progression systems
+-      - Redesigned levels, UI and onboarding for Park Them All — grew monthly installs 30x
+-      - Ran concept validation experiments, CTR from 0.4% to 5%
+-    stack: [Unity, Game Design, Level Design, Analytics]
+-
+-  - company: SOFTINTERMOB
+-    role: Unity Developer
+-    period: Nov 2023 — Jul 2024
+-    description:
+-      - Built two Minecraft and Roblox companion apps from Figma to App Store release — full cycle
+-      - Inherited legacy codebase — refactored architecture, rewrote parsers and core logic from scratch
+-      - Reduced code similarity from 95% to 5% across company projects via AppRefactor
+-      - Integrated Firebase and third-party SDKs, resolved iOS/Android compatibility issues
+-    stack: [Unity, C#, Firebase, iOS, Android]
+-
+-education:
+-  - institution: Wargaming Forge
+-    degree: Level Designer & Balancing
+-    period: "2020"
+-
+-  - institution: Siberian Polytechnic University
+-    degree: Faculty of Information Technology
+-    period: 2017–2018
+-
+-languages:
+-  - language: Russian
+-    level: Native
+-  - language: English
+-    level: IELTS 7.0 (B2)
+\ No newline at end of file
+diff --git a/src/content/cv/en_moderator.yaml b/src/content/cv/en_moderator.yaml
+new file mode 100644
+index 0000000..91d2431
+--- /dev/null
++++ b/src/content/cv/en_moderator.yaml
+@@ -0,0 +1,66 @@
++name: Vladimir Prikhodko
++title: Content Moderator · Community Moderator · Trust & Safety
++
++summary: >
++  Moderation and Trust & Safety specialist with 11 years of experience managing large
++  online communities. I detect harmful content, prevent conflicts from escalating
++  and keep communities healthy. Worked with audiences of 20,000+ people in real time.
++  I respond quickly to incidents, enforce platform rules and keep violation reports.
++
++achievements:
++  - Moderated live-stream audiences of 1,500 to 20,000 concurrent users
++  - Kept moderation stable in an active gaming community
++  - 11+ years moderating chats, forums and game servers
++  - Detected and banned rule-breakers, prevented spam, insults and toxic behavior
++
++skills:
++  - group: Moderation
++    items: [Content Moderation, Chat Moderation, Live Moderation, Forum Moderation, User Generated Content, Content control]
++
++  - group: Trust & Safety
++    items: [Trust & Safety, Policy Enforcement, Fraud Detection, Spam Detection, Escalation]
++
++  - group: Community
++    items: [Community Management, Community Support, Consulting]
++
++  - group: Platforms
++    items: [YouTube, Twitch, Telegram]
++
++  - group: Communication
++    items: [Business communication, Business correspondence, Business ethics, Administration]
++
++  - group: Languages
++    items: [Russian — native, English — B2]
++
++experience:
++
++  - company: YouTube channel VitecPlay
++    role: Moderator
++    period: Apr 2019 — Present
++    description:
++      - Monitored chat during live streams
++      - Moderated user-generated content
++      - Detected platform rule violations
++      - Handled user complaints
++      - Prevented conflicts in the community
++    stack: [YouTube, Live Moderation]
++
++  - company: YouTube channel MrLololoshka
++    role: Moderator
++    period: Jun 2017 — Present
++    description:
++      - Moderated chats and user messages during streams and publications
++      - Enforced community rules, detected and banned violators
++      - Prevented spam, insults and toxic behavior
++      - Kept a positive atmosphere and responded quickly to conflicts
++      - Worked with stream audiences of 1,500 – 20,000 concurrent users
++    stack: [YouTube, Chat Moderation, Community Management]
++
++  - company: StreamCraft
++    role: Moderator, Senior Moderator
++    period: Jun 2014 — Aug 2016
++    description:
++      - Moderated players on a game server and enforced the rules
++      - Reviewed user complaints and banned violators
++      - Supported players and helped solve their problems
++    stack: [Game Moderation, Policy Enforcement]
+diff --git a/src/content/cv/en_support.yaml b/src/content/cv/en_support.yaml
+new file mode 100644
+index 0000000..367f78c
+--- /dev/null
++++ b/src/content/cv/en_support.yaml
+@@ -0,0 +1,60 @@
++name: Vladimir Prikhodko
++title: Technical Support Specialist · Service Desk · IT Support
++
++summary: >
++  Technical support (Service Desk) specialist with 5 years of experience supporting
++  IT infrastructure and customer-facing systems. Proficient in Incident Management
++  and Request Management. Set up corporate services (CRM, IP telephony, email),
++  worked with ticket databases and met SLAs. I diagnose complex technical problems,
++  escalate tasks and maintain technical documentation. Focused on automating
++  support processes and improving the quality of user interaction.
++
++achievements:
++  - Handled up to 250+ requests per day
++  - Set up IT infrastructure for new users — email, domains, CRM, IP telephony, work chats
++  - Tracked task completion and met SLA targets
++  - Experience on both 1st and 2nd support lines
++
++skills:
++  - group: Support
++    items: [Technical Support, Service Desk, Help Desk, IT Support, 1st line, 2nd line, Customer Support]
++
++  - group: Processes
++    items: [ITSM, Incident Management, Request Management, SLA, Escalation]
++
++  - group: Systems
++    items: [CRM systems, AmoCRM, Atlassian Jira, Atlassian Confluence, IP telephony]
++
++  - group: Administration
++    items: [System administration, PC setup, Software setup, Website administration, Information security]
++
++  - group: Soft skills
++    items: [Working with users, Technical documentation, Time management, Handling large volumes of information]
++
++  - group: Languages
++    items: [Russian — native, English — B2]
++
++experience:
++
++  - company: Radist Online
++    role: Technical Support Specialist
++    period: Sep 2025 — Mar 2026
++    description:
++      - Handled user and customer requests through AmoCRM
++      - Diagnosed and resolved users' technical problems
++      - Analyzed incidents and found solutions
++      - Escalated complex technical tasks to the relevant specialists
++      - Tracked task completion and SLA
++      - Advised users on how to use the platform
++      - Maintained the ticket database and documentation
++    stack: [AmoCRM, Service Desk, SLA, Incident Management]
++
++  - company: CENTURY 21
++    role: Specialist, Business Support Department
++    period: May 2020 — Dec 2024
++    description:
++      - Service Desk — received and processed requests, diagnosed and fixed technical problems, advised on internal services, coordinated tasks between specialists
++      - Service administration — set up and maintained corporate services, worked with CRM, managed user accounts, supported communication systems
++      - Set up IT infrastructure for new users — corporate email, domains, CRM, IP telephony, work chats and services
++      - Process work — structured tickets, tracked task completion, prepared reports, maintained technical documentation
++    stack: [CRM, IP telephony, Service Desk, Administration]
+diff --git a/src/content/cv/ru.yaml b/src/content/cv/ru.yaml
+index 4dbf473..9735b22 100644
+--- a/src/content/cv/ru.yaml
++++ b/src/content/cv/ru.yaml
+@@ -1,178 +1,72 @@
+-name: Александр Гусаров
+-title: Software Engineer — DevOps · Fullstack · GameDev
++name: Владимир Приходько
++title: Разработчик · Java · Open Source
+ 
+ summary: >
+-  Инженер с 14+ годами опыта в DevOps, fullstack и геймдеве.
+-  Управлял инфраструктурой из 750+ серверов, участвовал в продуктах с аудиторией 100M+,
+-  строил всё — от CI/CD пайплайнов до мультиплеерных бэкендов.
+-  Закрываю полный цикл — архитектура, код, деплой — и мне это реально нравится.
++  Software Developer с 10-летним опытом разработки и поддержки open-source проектов.
++  Специализируюсь на серверных модулях, плагинах и интеграции API на Java.
++  Проекты с 1M+ скачиваний на CurseForge. Рефакторинг legacy-кода, оптимизация
++  производительности, event-based архитектура. Пишу чистый, поддерживаемый код
++  и развиваю open-source экосистему.
+ 
+ contacts:
+   - label: Email
+-    url: mailto:spartan.dgs.121@icloud.com
++    url: mailto:rumarukakunnya@gmail.com
+   - label: GitHub
+-    url: https://github.com/KeeGooRoomiE
+-  - label: Telegram
+-    url: https://t.me/spartan121
+-  - label: Upwork
+-    url: https://www.upwork.com/freelancers/~01764e57e0646f2fbf
+-  - label: LinkedIn
+-    url: https://www.linkedin.com/in/alexander-gusarov-4a08911a2/
+-  - label: Habr
+-    url: https://career.habr.com/xandergusarov
++    url: https://github.com/Rumaruka
++  - label: CurseForge
++    url: https://www.curseforge.com/minecraft/mc-mods/thaumic-bases-unofficial
++  - label: Setka
++    url: https://set.ki/account/iUSWToy
++
++location: Челябинск
++timezone: Удалённо
+ 
+ achievements:
+-  - Обслуживал и автоматизировал инфраструктуру из 750+ Linux-серверов (Selectel VPS и bare metal) с аптаймом 99.9%
+-  - Сократил время деплоя с 8 до 2 минут (−75%) и расходы на AWS с $550 до $300/мес
+-  - Sand Balls — участвовал в разработке игры с 100M+ скачиваний и топом App Store
+-  - Bhop Jump — построил мультиплеерный бэкенд, $160K+ выручки в первом квартале
+-  - Lana and Ronen — мобильный тайтл с 1M+ скачиваний
+-  - Upwork Top Rated Plus — топ 5% фрилансеров, 20+ успешных проектов
++  - Проекты с 1M+ скачиваний на CurseForge
++  - 10+ лет разработки и сопровождения open-source проектов
++  - Портирование и поддержка Thaumic Bases Unofficial на новые версии платформы
++  - Поддержка совместимости между модами и работа с пользователями через GitHub Issues
+ 
+ skills:
+   - group: Языки программирования
+-    items: [Go, C#, JavaScript, TypeScript, Dart, Swift, Java, GML]
+-
+-  - group: Backend и API
+-    items: [Node.js, REST API, WebSockets, микросервисы, EF Core]
+-
+-  - group: Frontend
+-    items: [React, Angular, HTML, CSS, Tailwind]
++    items: [Java, Kotlin, Python, C#, C++, Rust, JavaScript, PHP, Ruby]
+ 
+-  - group: DevOps и инфраструктура
+-    items: [Kubernetes, Helm, Docker, Terraform, Ansible, GitLab CI, GitHub Actions, Jenkins]
++  - group: Разработка модов и плагинов
++    items: [Plugin Development, Minecraft Modding, NeoForge, API integration, event-based архитектура]
+ 
+-  - group: Облака
+-    items: [AWS — EC2, S3, RDS, VPC, IAM, ALB, Yandex Cloud, Selectel]
++  - group: Инструменты
++    items: [Git, GitHub, Gradle, Maven, Docker Compose, REST API, MySQL, Node.js]
+ 
+-  - group: Observability
+-    items: [Prometheus, VictoriaMetrics, Grafana, Loki, Alertmanager, CloudWatch]
+-
+-  - group: Базы данных
+-    items: [PostgreSQL, ClickHouse, MySQL, MongoDB, Redis, RabbitMQ]
+-
+-  - group: Геймдев
+-    items: [Unity, GameMaker, мультиплеер, монетизация, игровой дизайн]
++  - group: Практики
++    items: [ООП, Refactoring, Debugging, Code Review, Open Source]
+ 
+   - group: Платформы
+-    items: [Linux, Web, iOS, Android, macOS]
++    items: [Unity, Android, HTML]
+ 
+   - group: Языки
+-    items: [Русский — родной, Английский — IELTS 7.0 (B2)]
++    items: [Русский — родной, Английский — B2]
+ 
+ experience:
+ 
+-  - company: InfoScale
+-    role: DevOps-инженер / Software Engineer
+-    period: Дек 2024 — Янв 2026
+-    description:
+-      - Мониторинг и обслуживание 750+ Linux-серверов (Selectel VPS и bare metal)
+-        — сетевые интерфейсы, порты, управление доступами, реагирование на инциденты
+-      - Управление Kubernetes-кластерами в Yandex Cloud и self-hosted
+-        (GitLab, Matrix, Keycloak, Vault); написание и поддержка Helm-чартов
+-      - Построил Terraform-инфраструктуру для ~20 AWS-сервисов ($550 → $300/мес);
+-        писал собственные модули, развернул ClickHouse; Ansible для конфигурации инстансов
+-      - Оптимизировал CI/CD в нескольких репозиториях (GitHub Actions + GitLab CI);
+-        единая структура пайплайнов сократила время деплоя с 8 до 2 минут
+-      - Построил observability-стек с нуля — пробы VictoriaMetrics, алертинг Prometheus,
+-        кастомные дашборды Grafana; Alertmanager с доставкой в Telegram и Matrix
+-      - Спроектировал и разработал SaaS-сервис мониторинга полного цикла (Go + Gin/GORM + React)
+-        — проверки ping, домена, SSL с интервалами от 10 сек до 24 часов; задеплоен в кластере Kubernetes
+-      - Реагировал на SSH brute-force атаки через KVM live-доступ,
+-        блокировку портов, ротацию пользователей и настройку таймаутов
+-      - Вырастил команду инфраструктуры с 3 до 6 человек; менторил 3 джуниоров
+-    stack: [Kubernetes, Helm, Docker, Terraform, Ansible, AWS, Yandex Cloud, GitLab CI, GitHub Actions, Go, React, PostgreSQL, ClickHouse, VictoriaMetrics, Grafana]
+-
+-  - company: SOFTINTERMOB
+-    role: Unity-разработчик
+-    period: Ноя 2023 — Июл 2024
+-    description:
+-      - Разработал два мобильных приложения от Figma до релиза в App Store — полный цикл
+-      - Интегрировал Firebase и сторонние SDK, решал проблемы совместимости iOS/Android
+-      - Рефакторил legacy-кодовую базу, улучшил стабильность и производительность
+-    stack: [Unity, C#, Firebase, iOS, Android]
+-
+-  - company: AZNResearch
+-    role: Fullstack-разработчик
+-    period: Июл 2022 — Окт 2023
+-    description:
+-      - Проектировал фронтенд-архитектуру внутренних продуктов для госсектора и enterprise (Angular + Tailwind)
+-      - Разрабатывал бэкенд-микросервисы на .NET Core + EF Core, REST API и LINQ-запросы
+-      - Внедрил Git-воркфлоу, код-ревью и CI-пайплайны, повысил продуктивность команды на 25%
+-    stack: [Angular, Tailwind, C#, .NET Core, SQL Server, MySQL]
+-
+-  - company: Neosight
+-    role: Гейм-дизайнер
+-    period: Ноя 2021 — Фев 2022
+-    description:
+-      - Написал GDD для 6 мобильных игр — механики, монетизация, прогрессия
+-      - Проводил эксперименты по валидации концептов, вырастил установки в 30 раз, CTR с 0.4% до 5%
+-      - Балансировал уровни и кривые сложности по метрикам retention и drop-off
+-    stack: [Unity, Game Design, Analytics]
+-
+-  - company: Udemy
+-    role: Unity-разработчик
+-    period: Мар 2021 — Окт 2021
+-    description:
+-      - Разработал приложение для изучения немецкого с нуля — 22 категории, ~3000 карточек
+-      - Оптимизировал архитектуру и хранение данных, уменьшил размер с ~3GB до 400MB
+-    stack: [Unity, C#, JSON, iOS, Android]
+-
+-  - company: Popside Games
+-    role: Левел-дизайнер
+-    period: Июл 2020 — Окт 2020
+-    description:
+-      - Спроектировал и сбалансировал 3000+ уровней для Match-3 и Solitaire в сжатые сроки
+-      - Улучшил completion rate уровней на 15% через итеративное тестирование
+-    stack: [Game Design, Level Design]
+-
+-  - company: SayGames
+-    role: Гейм-дизайнер
+-    period: Фев 2020 — Июн 2020
+-    description:
+-      - Проектировал механики и уровни для hyper-casual прототипов
+-      - Участвовал в разработке Sand Balls (100M+ скачиваний) и FlowerKing
+-      - Улучшил D1-retention на 10% через итерации по метрикам
+-    stack: [Game Design, Unity]
+-
+-  - company: Goodline
+-    role: Software Engineer
+-    period: Ноя 2019 — Янв 2020
+-    description:
+-      - Разрабатывал и адаптировал внутренние React-интерфейсы для мобильных устройств
+-      - Улучшил производительность на 25% через оптимизацию компонентов
+-    stack: [React, JavaScript]
+-
+-  - company: Project Tech
+-    role: Software Engineer / Сооснователь
+-    period: Фев 2017 — Окт 2019
++  - company: Open Source
++    role: Open Source Developer (Independent Software Developer)
++    period: Дек 2015 — настоящее время
+     description:
+-      - Основал студию разработки — нанимал разработчиков, вёл переговоры с клиентами, заключал контракты
+-      - Выступал вторым инженером и техлидом — от архитектурных решений до продакшн-кода
+-      - Выпустил 10+ продуктов — игры, мобильные приложения и бизнес-ПО для ресторанов, доставки и VR
+-      - Построил мультиплеерный бэкенд для Bhop Jump вдвоём — P2P + выделенные серверы до 16 игроков, $160K выручки в Q1
+-      - Питчил паблишинг-сделки инди-разработчикам — ранний опыт в продукте и бизнес-развитии
+-    stack: [Unity, C#, React, React Native, Xamarin, Node.js, WebSockets, Docker, VR]
++      - Разработка плагинов и модулей на Java, работа с API и event-based архитектурой
++      - Портирование и поддержка Thaumic Bases Unofficial — исправление багов, обновление под новые версии, поддержка пользователей
++      - Поддержка и рефакторинг существующего кода, исправление ошибок и оптимизация производительности
++      - Поддержка совместимости между модами
++      - Взаимодействие с пользователями и обработка issues на GitHub
++      - Другие проекты — VanillaPlus+, Simple Grinder, MekaHardcore, Coolest Hardcore
++    stack: [Java, Git, GitHub, Plugin architectures, API integration]
+ 
+ education:
+-  - institution: Udemy
+-    degree: Linux Foundation Computer Science
+-    period: "2025"
+-
+-  - institution: Udemy
+-    degree: Certified Kubernetes Administrator
+-    period: "2025"
+-
+-  - institution: Wargaming Forge
+-    degree: Level Designer & Balancing
++  - institution: Филиал Томского государственного университета систем управления и радиоэлектроники, Сургут
++    degree: Неоконченное высшее
+     period: "2020"
+ 
+-  - institution: Siberian Polytechnic University / Сибирский политехнический университет
+-    degree: Faculty of Information Technology / Факультет информационных технологий
+-    period: 2017–2018
+-
+ languages:
+   - language: Русский
+     level: Родной
+   - language: Английский
+-    level: IELTS 7.0 (B2)
+\ No newline at end of file
++    level: B2
+diff --git a/src/content/cv/ru_devops.yaml b/src/content/cv/ru_devops.yaml
+deleted file mode 100644
+index 889d991..0000000
+--- a/src/content/cv/ru_devops.yaml
++++ /dev/null
+@@ -1,173 +0,0 @@
+-name: Александр Гусаров
+-title: DevOps / Infrastructure Engineer
+-
+-summary: >
+-  DevOps-инженер с 2 годами практического опыта в продакшене: Kubernetes, 
+-  управление Linux-серверами (750+ через Ansible), IaC на AWS и observability с нуля. 
+-  Навыки скриптинга и отладки из прошлого опыта разработки помогают быстрее 
+-  диагностировать инциденты и работать с dev-командами без барьеров.
+-
+-contacts:
+-  - label: Email
+-    url: mailto:spartan.dgs.121@icloud.com
+-  - label: GitHub
+-    url: https://github.com/KeeGooRoomiE
+-  - label: Telegram
+-    url: https://t.me/spartan121
+-  - label: Upwork
+-    url: https://www.upwork.com/freelancers/~01764e57e0646f2fbf
+-  - label: LinkedIn
+-    url: https://www.linkedin.com/in/alexander-gusarov-4a08911a2/
+-  - label: Habr
+-    url: https://career.habr.com/xandergusarov
+-
+-achievements:
+-  - Автоматизировал управление инфраструктурой 750+ Linux-серверов (Selectel VPS + bare metal) через Ansible-плейбуки и Kubernetes, сократив ручные операции на ~80%
+-  - Сократил время деплоя с 8 до 2 минут (−75%) за счёт оптимизации кэширования в GitLab CI, параллелизации сборки и структуры слоёв Docker
+-  - Снизил MTTR на 60% через централизованный стек мониторинга (Prometheus, Grafana, AlertManager)
+-  - Уменьшил размер Docker-образа с 500MB до 200MB переходом на Alpine, multi-stage builds и удалением debug-утилит из продакшн-образов
+-  - Заменил ручные проверки доступности сервисов автоматизированным SaaS-мониторингом (Go + PostgreSQL + React) с настраиваемыми интервалами проверок (от 10 сек до 24 ч)
+-  - Реагировал на инциденты в продакшене, включая SSH brute-force атаки, со временем ответа 1.5–2 минуты через KVM live-доступ и автоматическую блокировку
+-
+-skills:
+-  - group: Оркестрация
+-    items:
+-      - Kubernetes
+-      - Helm
+-      - Docker
+-
+-  - group: IaC и автоматизация
+-    items:
+-      - Terraform
+-      - Ansible
+-
+-  - group: CI/CD
+-    items:
+-      - GitLab CI
+-      - GitHub Actions
+-      - Jenkins
+-
+-  - group: Observability
+-    items:
+-      - Prometheus
+-      - VictoriaMetrics
+-      - Grafana
+-      - Loki
+-      - Alertmanager
+-      - CloudWatch
+-
+-  - group: Облака
+-    items:
+-      - AWS — EC2
+-      - S3
+-      - RDS
+-      - VPC
+-      - IAM
+-      - ALB
+-
+-  - group: Базы данных
+-    items:
+-      - PostgreSQL
+-      - ClickHouse
+-      - MySQL
+-      - Redis
+-      - MongoDB
+-
+-  - group: Языки программирования
+-    items:
+-      - Go
+-      - Python
+-      - Bash
+-
+-  - group: Платформы
+-    items:
+-      - Linux
+-      - AWS
+-      - Yandex Cloud
+-      - Selectel
+-
+-  - group: Языки
+-    items:
+-      - Русский — родной
+-      - Английский — B2
+-
+-experience:
+-
+-  - company: InfoScale
+-    role: DevOps-инженер
+-    period: Дек 2024 — Янв 2026
+-    description:
+-      - "Мониторинг и обслуживание 750+ Linux-серверов (Selectel VPS + bare metal): сетевые интерфейсы, настройка портов, управление SSH-доступами и реагирование на инциденты"
+-      - "Развёртывание и поддержка Kubernetes-кластеров в Yandex Cloud и self-hosted инфраструктуре (GitLab, Matrix, Keycloak, Vault); написание Helm-чартов для внутренних сервисов и адаптация community-чартов под продакшн"
+-      - "Построил Terraform-инфраструктуру для ~20 AWS-сервисов, снизив расходы с $550 до $300/мес; писал модули для переиспользуемых деплоев, развернул ClickHouse-кластеры; использовал Ansible для конфигурации инстансов и управления секретами"
+-      - "Оптимизировал CI/CD-пайплайны в нескольких репозиториях (GitHub Actions + GitLab CI); унифицировал структуру пайплайнов, добавил кэширование и параллелизацию сборки, сократил время деплоя с 8 до 2 минут"
+-      - "Построил observability-стек с нуля: VictoriaMetrics (метрики), Prometheus (сбор и алертинг), Grafana-дашборды для визуализации; интегрировал AlertManager с Telegram и Matrix"
+-      - "Разработал SaaS-сервис мониторинга (Go + Gin/GORM + React) с проверками ping, домена и SSL; интервалы от 10 секунд до 24 часов"
+-      - "Реагировал на инциденты в продакшене (SSH brute-force атаки) через KVM live-доступ; блокировал IP, ротировал credentials, настроил fail2ban и SSH-таймауты"
+-      - "Вырастил команду инфраструктуры с 3 до 6 человек; менторил джуниоров по Kubernetes, GitLab CI и incident response"
+-    stack:
+-      - Kubernetes
+-      - Helm
+-      - Docker
+-      - Terraform
+-      - Ansible
+-      - AWS
+-      - Yandex Cloud
+-      - GitLab CI
+-      - GitHub Actions
+-      - Go
+-      - PostgreSQL
+-      - ClickHouse
+-      - VictoriaMetrics
+-      - Grafana
+-
+-  - company: AZNResearch
+-    role: Fullstack-разработчик
+-    period: Июл 2022 — Окт 2023
+-    description:
+-      - "Разрабатывал бэкенд-сервисы на .NET Core + EF Core; REST API для внутренних систем госсектора и enterprise"
+-      - "Внедрил Git-воркфлоу, CI-пайплайны GitLab и Docker для dev-окружений"
+-      - "Повысил продуктивность команды на ~25% через code review, автоматизацию CI и knowledge sharing"
+-    stack:
+-      - C#
+-      - .NET Core
+-      - SQL Server
+-      - MySQL
+-      - Angular
+-      - Docker
+-      - GitLab CI
+-
+-  - company: Project Tech
+-    role: Software Engineer / Сооснователь
+-    period: Фев 2017 — Окт 2019
+-    description:
+-      - "Построил мультиплеерный бэкенд для Bhop Jump (on-prem мастер-сервер + Google Cloud): P2P и выделенные серверы до 16 игроков"
+-      - "Выпустил 10+ продуктов в продакшен: мобильные игры, веб-приложения и бизнес-ПО"
+-      - "Деплоил сервисы через Docker; настроил macOS VM для iOS билд-пайплайнов"
+-    stack:
+-      - Node.js
+-      - WebSockets
+-      - Docker
+-      - React
+-      - C#
+-      - Google Cloud
+-      - Firebase
+-
+-education:
+-  - institution: Udemy
+-    degree: Linux Foundation Computer Science
+-    period: "2025"
+-
+-  - institution: Udemy
+-    degree: Certified Kubernetes Administrator
+-    period: "2025"
+-
+-  - institution: Сибирский политехнический университет
+-    degree: Факультет информационных технологий
+-    period: 2017–2018
+-
+-languages:
+-  - language: Русский
+-    level: Родной
+-  - language: Английский
+-    level: IELTS 7.0 (B2)
+diff --git a/src/content/cv/ru_gamedev.yaml b/src/content/cv/ru_gamedev.yaml
+deleted file mode 100644
+index 5146893..0000000
+--- a/src/content/cv/ru_gamedev.yaml
++++ /dev/null
+@@ -1,119 +0,0 @@
+-name: Александр Гусаров
+-title: Game Developer — Unity · GameMaker · Level Design
+-
+-summary: >
+-  Разработчик игр с опытом по обе стороны — дизайн и инженерия.
+-  Шипил хайпер-казуальные хиты, строил мультиплеерные бэкенды, проектировал тысячи уровней.
+-  Реальные продукты, реальные цифры.
+-
+-contacts:
+-  - label: Email
+-    url: mailto:spartan.dgs.121@icloud.com
+-  - label: GitHub
+-    url: https://github.com/KeeGooRoomiE
+-  - label: Telegram
+-    url: https://t.me/spartan121
+-  - label: Upwork
+-    url: https://www.upwork.com/freelancers/~01764e57e0646f2fbf
+-  - label: LinkedIn
+-    url: https://www.linkedin.com/in/alexander-gusarov-4a08911a2/
+-  - label: Habr
+-    url: https://career.habr.com/xandergusarov
+-
+-achievements:
+-  - Sand Balls — левел-дизайн и механики в мобильном хите с 100M+ скачиваний
+-  - Bhop Jump — построил мультиплеерный бэкенд, $160K+ выручки в первом квартале
+-  - Lana and Ronen — мобильный тайтл с 1M+ скачиваний
+-  - Спроектировал и сбалансировал 3000+ уровней для мобильных Match-3 и Solitaire игр
+-  - Upwork Top Rated Plus — топ 5% фрилансеров, 20+ успешных проектов
+-
+-skills:
+-  - group: Разработка игр
+-    items: [Unity, GameMaker Studio, C#, GML, геймдизайн, левел-дизайн, монетизация]
+-
+-  - group: Мультиплеер и бэкенд
+-    items: [Node.js, WebSockets, мультиплеерная архитектура, P2P, выделенные серверы]
+-
+-  - group: Фронтенд и мобайл
+-    items: [React, React Native, iOS, Android]
+-
+-  - group: Инструменты и платформы
+-    items: [Firebase, Figma, Git, Docker, Google Cloud]
+-
+-  - group: Языки
+-    items: [Русский — родной, Английский — IELTS 7.0 (B2)]
+-
+-experience:
+-
+-  - company: Project Tech
+-    role: Software Engineer / Сооснователь
+-    period: Фев 2017 — Окт 2019
+-    description:
+-      - Основал игровую студию — нанимал разработчиков, вёл переговоры с клиентами, заключал контракты
+-      - Спроектировал и построил мультиплеерный бэкенд для Bhop Jump вдвоём
+-        — P2P + выделенные серверы до 16 игроков, $160K+ выручки в Q1
+-      - Выпустил Lana and Ronen — мобильный тайтл с 1M+ скачиваний
+-      - Выпустил 10+ продуктов — игры, мобильные приложения и бизнес-ПО
+-      - Выступал техлидом — от архитектурных решений до продакшн-кода
+-    stack: [Unity, C#, GameMaker, Node.js, WebSockets, React, React Native, Docker, Google Cloud, Firebase]
+-
+-  - company: SayGames
+-    role: Гейм-дизайнер / Левел-дизайнер
+-    period: Фев 2020 — Июн 2020
+-    description:
+-      - Участвовал в разработке Sand Balls (100M+ скачиваний) — проектировал уровни и механики,
+-        совместно с разрабами создавал и расставлял пропсы на картах
+-      - Участвовал в разработке FlowerKing — та же роль, механики и левел-дизайн
+-      - Улучшил D1-retention на 10% через итеративный метрико-ориентированный дизайн
+-    stack: [Unity, Game Design, Level Design, Analytics]
+-
+-  - company: Popside Games
+-    role: Левел-дизайнер
+-    period: Июл 2020 — Окт 2020
+-    description:
+-      - Спроектировал и сбалансировал 3000+ уровней для Match-3 и Solitaire в сжатые сроки
+-      - Улучшил completion rate уровней на 15% через итеративное тестирование
+-    stack: [Game Design, Level Design]
+-
+-  - company: Udemy
+-    role: Unity-разработчик (фриланс)
+-    period: Мар 2021 — Окт 2021
+-    description:
+-      - Разработал приложение для изучения немецкого языка с нуля как фриланс-заказ
+-        — 22 категории, ~3000 карточек
+-      - Оптимизировал архитектуру и хранение данных, уменьшил размер с ~3GB до 400MB
+-    stack: [Unity, C#, JSON, iOS, Android]
+-
+-  - company: Neosight
+-    role: Гейм-дизайнер / Левел-дизайнер
+-    period: Ноя 2021 — Фев 2022
+-    description:
+-      - Написал GDD для 6 мобильных игр — механики, монетизация, прогрессия
+-      - Переработал уровни, UI и онбординг для Park Them All — ежемесячные установки выросли в 30 раз
+-      - Проводил эксперименты по валидации концептов, CTR вырос с 0.4% до 5%
+-    stack: [Unity, Game Design, Level Design, Analytics]
+-
+-  - company: SOFTINTERMOB
+-    role: Unity-разработчик
+-    period: Ноя 2023 — Июл 2024
+-    description:
+-      - Разработал два companion-приложения (Minecraft и Roblox тематика) от Figma до релиза в App Store
+-      - Унаследовал legacy-кодовую базу — рефакторил архитектуру, переписал парсеры и логику с нуля
+-      - Снизил схожесть кода с другими проектами компании с 95% до 5% через AppRefactor
+-      - Интегрировал Firebase и сторонние SDK, решал проблемы совместимости iOS/Android
+-    stack: [Unity, C#, Firebase, iOS, Android]
+-
+-education:
+-  - institution: Wargaming Forge
+-    degree: Level Designer & Balancing
+-    period: "2020"
+-
+-  - institution: Сибирский политехнический университет
+-    degree: Факультет информационных технологий
+-    period: 2017–2018
+-
+-languages:
+-  - language: Русский
+-    level: Родной
+-  - language: Английский
+-    level: IELTS 7.0 (B2)
+\ No newline at end of file
+diff --git a/src/content/cv/ru_moderator.yaml b/src/content/cv/ru_moderator.yaml
+new file mode 100644
+index 0000000..ace83b7
+--- /dev/null
++++ b/src/content/cv/ru_moderator.yaml
+@@ -0,0 +1,67 @@
++name: Владимир Приходько
++title: Модератор контента · Community Moderator · Trust & Safety
++
++summary: >
++  Специалист по модерации и Trust & Safety с 11-летним опытом управления крупными
++  онлайн-сообществами. Выявляю деструктивный контент, предотвращаю эскалацию конфликтов
++  и поддерживаю здоровую атмосферу. Работал с аудиторией до 20 000+ человек в режиме
++  реального времени. Оперативно реагирую на инциденты, соблюдаю правила платформы
++  и веду отчётность по нарушениям.
++
++achievements:
++  - Работа с аудиторией стримов от 1 500 до 20 000 пользователей одновременно
++  - Стабильная модерация в активном игровом сообществе
++  - 11+ лет опыта модерации чатов, форумов и игровых серверов
++  - Выявление и блокировка нарушителей, предотвращение спама, оскорблений и токсичного поведения
++
++skills:
++  - group: Модерация
++    items: [Content Moderation, Chat Moderation, Live Moderation, Forum Moderation, User Generated Content, Контроль контента]
++
++  - group: Trust & Safety
++    items: [Trust & Safety, Policy Enforcement, Fraud Detection, Spam Detection, Escalation]
++
++  - group: Сообщество
++    items: [Community Management, Community Support, Консультирование]
++
++  - group: Платформы
++    items: [YouTube, Twitch, Telegram]
++
++  - group: Коммуникации
++    items: [Деловое общение, Деловая переписка, Деловая этика, Администрирование]
++
++  - group: Языки
++    items: [Русский — родной, Английский — B2]
++
++experience:
++
++  - company: Ютуб-канал VitecPlay
++    role: Модератор
++    period: Апр 2019 — настоящее время
++    description:
++      - Контроль чата во время трансляций
++      - Модерация пользовательского контента
++      - Выявление нарушений правил платформы
++      - Работа с жалобами пользователей
++      - Предотвращение конфликтов в комьюнити
++    stack: [YouTube, Live Moderation]
++
++  - company: Ютуб-канал MrLololoshka
++    role: Модератор
++    period: Июн 2017 — настоящее время
++    description:
++      - Модерация чатов и пользовательских сообщений во время стримов и публикаций
++      - Контроль соблюдения правил сообщества, выявление и блокировка нарушителей
++      - Предотвращение спама, оскорблений и токсичного поведения
++      - Поддержание позитивной атмосферы и оперативная реакция на конфликтные ситуации
++      - Работа с аудиторией стримов 1 500 – 20 000 пользователей одновременно
++    stack: [YouTube, Chat Moderation, Community Management]
++
++  - company: StreamCraft
++    role: Модератор, Старший модератор
++    period: Июн 2014 — Авг 2016
++    description:
++      - Модерация игроков на игровом сервере, контроль соблюдения правил
++      - Рассмотрение жалоб пользователей, блокировка нарушителей
++      - Поддержка игроков и помощь в решении проблем
++    stack: [Game Moderation, Policy Enforcement]
+diff --git a/src/content/cv/ru_support.yaml b/src/content/cv/ru_support.yaml
+new file mode 100644
+index 0000000..6ce4cd1
+--- /dev/null
++++ b/src/content/cv/ru_support.yaml
+@@ -0,0 +1,60 @@
++name: Владимир Приходько
++title: Специалист технической поддержки · Service Desk · IT Support
++
++summary: >
++  Специалист технической поддержки (Service Desk) с 5-летним опытом сопровождения
++  IT-инфраструктуры и клиентских систем. Владею процессами Incident Management
++  и Request Management. Настраивал корпоративные сервисы (CRM, IP-телефония, почта),
++  работал с базами обращений и соблюдал SLA. Диагностирую сложные технические проблемы,
++  эскалирую задачи и веду техническую документацию. Ориентирован на автоматизацию
++  процессов поддержки и качество взаимодействия с пользователями.
++
++achievements:
++  - Обработка до 250 и более обращений ежедневно
++  - Организация IT-инфраструктуры для новых пользователей — почта, домены, CRM, IP-телефония, рабочие чаты
++  - Контроль выполнения задач и соблюдение SLA
++  - Опыт работы на 1-й и 2-й линиях поддержки
++
++skills:
++  - group: Поддержка
++    items: [Техническая поддержка, Service Desk, Help Desk, IT Support, 1 линия, 2 линия, Customer Support]
++
++  - group: Процессы
++    items: [ITSM, Incident Management, Request Management, SLA, Эскалация]
++
++  - group: Системы
++    items: [CRM системы, AmoCRM, Atlassian Jira, Atlassian Confluence, IP-телефония]
++
++  - group: Администрирование
++    items: [Системное администрирование, Настройка ПК, Настройка ПО, Администрирование сайтов, Информационная безопасность]
++
++  - group: Soft skills
++    items: [Работа с пользователями, Техническая документация, Управление временем, Работа с большим объемом информации]
++
++  - group: Языки
++    items: [Русский — родной, Английский — B2]
++
++experience:
++
++  - company: Радист Онлайн
++    role: Специалист технической поддержки
++    period: Сен 2025 — Мар 2026
++    description:
++      - Обработка обращений пользователей и клиентов через AmoCRM
++      - Диагностика и устранение технических проблем пользователей
++      - Анализ инцидентов и поиск решений
++      - Эскалация сложных технических задач профильным специалистам
++      - Контроль выполнения задач и SLA
++      - Консультирование пользователей по работе платформы
++      - Ведение базы обращений и документации
++    stack: [AmoCRM, Service Desk, SLA, Incident Management]
++
++  - company: CENTURY 21
++    role: Специалист в Отделе сопровождения бизнеса
++    period: Май 2020 — Дек 2024
++    description:
++      - Service Desk — приём и обработка заявок, диагностика и решение технических проблем, консультации по внутренним сервисам, координация задач между специалистами
++      - Администрирование сервисов — настройка и сопровождение корпоративных сервисов, работа с CRM, управление пользовательскими аккаунтами, поддержка коммуникационных систем
++      - Организация IT-инфраструктуры для новых пользователей — корпоративная почта, домены, CRM, IP-телефония, рабочие чаты и сервисы
++      - Работа с процессами — структурирование заявок, контроль выполнения задач, подготовка отчётности, ведение технической документации
++    stack: [CRM, IP-телефония, Service Desk, Администрирование]
+diff --git a/src/content/profiles/profiles.yml b/src/content/profiles/profiles.yml
+index 1816408..100fb1c 100644
+--- a/src/content/profiles/profiles.yml
++++ b/src/content/profiles/profiles.yml
+@@ -1,13 +1,13 @@
+ profiles:
+   - id: default
+-    label: "Generalist"
++    label: "Developer"
+     slug: ""
+     spec: null
+-  - id: devops
+-    label: "DevOps"
+-    slug: "devops"
+-    spec: devops
+-  - id: gamedev
+-    label: "Game Developer"
+-    slug: "gamedev"
+-    spec: gamedev
+\ No newline at end of file
++  - id: support
++    label: "Tech Support"
++    slug: "support"
++    spec: support
++  - id: moderator
++    label: "Moderator"
++    slug: "moderator"
++    spec: moderator
+diff --git a/src/content/showcase/projects_en.yaml b/src/content/showcase/projects_en.yaml
+index 7827a8c..813b77e 100644
+--- a/src/content/showcase/projects_en.yaml
++++ b/src/content/showcase/projects_en.yaml
+@@ -1,849 +1,79 @@
+ projects:
+-  - slug: cv-hub
++  - slug: thaumic-bases-unofficial
+     order: 1
+-    name: CV Hub
+-    role: Author / Engineer
+-    year: "2026"
+-    description: Data-driven personal CV platform built with Astro and YAML as a single source of truth. Replaces static resumes and no-code builders with a version-controlled, extensible solution.
++    name: Thaumic Bases Unofficial
++    role: Maintainer / Developer
++    year: "2015"
++    description: "Porting and maintenance of the Thaumic Bases mod: bug fixes, updates for new platform versions, compatibility with other mods and user support."
+     theme: blue
+     featured: true
+-    platforms: [Web, GitHub Pages]
+-    tags: [astro, yaml, automation, ci-cd, open-source]
+-    metrics:
+-      - label: Open Source
+-        value: "Free to everyone"
+-      - label: Deployment
+-        value: "GitHub Pages"
+-      - label: You Are Here
+-        value: "Live Service"
+-    stack: [Astro, TypeScript, YAML, GitHub Actions, CSS]
++    platforms: [Minecraft, CurseForge]
++    tags: [java, minecraft, modding, open-source]
++    stack: [Java, Gradle, Git]
+     links:
++      - label: CurseForge
++        url: https://www.curseforge.com/minecraft/mc-mods/thaumic-bases-unofficial
++        type: store
+       - label: GitHub
+-        url: https://github.com/KeeGooRoomiE/cv_hub
++        url: https://github.com/Rumaruka
+         type: repo
+-      - label: Changelog
+-        url: /changelog
+-        type: article
+-      - label: Deep Dive
+-        url: /showcase/cv-hub
+-        type: product
+ 
+-  - slug: wikinest
++  - slug: vanillaplus
+     order: 2
+-    name: WikiNest
+-    role: Author / Engineer
+-    year: "2026"
+-    description: Git-native wiki for small engineering teams. A browser-based markdown editor where every edit becomes a Git commit — no server, no database, no build step. Ships as a single HTML file.
++    name: VanillaPlus+
++    role: Author / Developer
++    year: ""
++    description: "Open-source Minecraft project written in Java."
+     theme: cyan
+-    featured: true
+-    platforms: [Web, GitHub Pages, GitLab Pages]
+-    tags: [open-source, wiki, markdown, git, no-build, static]
+-    stack: [HTML, CSS, GitHub API, GitLab API]
+-    metrics:
+-      - label: Dependencies
+-        value: "Zero"
+-      - label: Setup
+-        value: "2 minutes"
+-      - label: Storage
+-        value: "Git repo"
++    platforms: [Minecraft, CurseForge]
++    tags: [java, minecraft, modding, open-source]
++    stack: [Java, Git]
+     links:
+       - label: GitHub
+-        url: https://github.com/KeeGooRoomiE/wikinest
++        url: https://github.com/Rumaruka
+         type: repo
+-      - label: Live Demo
+-        url: https://keegooroomie.github.io/wikinest
+-        type: demo
+-      - label: Deep Dive
+-        url: /showcase/wikinest
+-        type: product
+ 
+-  - slug: steam-deck-keyboard
++  - slug: simple-grinder
+     order: 3
+-    name: Steam Deck Custom Keyboard
+-    role: Creator / Maintainer
+-    year: "2025"
+-    description: Customizable Steam Deck keyboard theme template with preset system and runtime color configuration via CSS Loader UI.
+-    theme: cyan
+-    featured: true
+-    platforms: [SteamOS, Linux]
+-    tags: [open-source, steam-deck, ui, theming, css]
+-    stack: [CSS, JSON, Decky Loader]
+-    metrics:
+-      - label: Installs
+-        value: "17K+"
+-      - label: DeckThemes Rating
+-        value: "60⭐"
++    name: Simple Grinder
++    role: Author / Developer
++    year: ""
++    description: "Open-source Minecraft project written in Java."
++    theme: emerald
++    platforms: [Minecraft, CurseForge]
++    tags: [java, minecraft, modding, open-source]
++    stack: [Java, Git]
+     links:
+-      - label: Github
+-        url: https://github.com/KeeGooRoomiE/Steam-Deck-Keyboard-CSS-Loader-Template
++      - label: GitHub
++        url: https://github.com/Rumaruka
+         type: repo
+-      - label: DeckThemes
+-        url: https://deckthemes.com/themes/view?themeId=0c5d6c86-ef3e-4af7-a041-34731a51fe7f
+-    media:
+-      - type: image
+-        src: /media/projects/steam-deck-keyboard/cover.png
+-        alt: "Steam Deck custom keyboard theme preview"
+-        featured: true
+ 
+-  - slug: sand-balls
++  - slug: mekahardcore
+     order: 4
+-    name: Sand Balls
+-    role: Level & Systems Designer
+-    year: "2020"
+-    description: Core gameplay systems, balancing and performance optimization for a top-chart arcade mobile game with massive global audience.
+-    theme: emerald
+-    featured: true
+-    platforms: [iOS, Android]
+-    tags: [unity, mobile, gameplay, production, casual]
+-    stack: [Unity, C#, Mobile Optimization]
+-    metrics:
+-      - label: Downloads
+-        value: "100M+"
+-      - label: Store Rank
+-        value: "Top-3 Arcade"
+-    links:
+-      - label: App Store
+-        url: https://apps.apple.com/app/sand-balls/id1483631996
+-        type: store
+-      - label: Google Play
+-        url: https://play.google.com/store/apps/details?id=com.water.balls
+-        type: store
+-    media:
+-      - type: image
+-        src: /media/projects/sand-balls/cover.png
+-        alt: "Sand Balls gameplay screenshot"
+-        featured: true
+-
+-  - slug: bhop-jump
+-    order: 5
+-    name: Bhop Jump
+-    role: Gameplay & Multiplayer Engineer
+-    year: "2017"
+-    description: Competitive mobile parkour game inspired by bhop mechanics, featuring skill-based movement and real-time multiplayer modes.
+-    theme: blue
+-    featured: true
+-    platforms: [iOS, Android]
+-    tags: [unity, mobile, multiplayer, arcade]
+-    stack: [Unity, C#]
+-    metrics:
+-      - label: Revenue
+-        value: "$160K+ (Q1 2017)"
+-      - label: Downloads
+-        value: "100K+"
+-    links:
+-      - label: App Store
+-        url: https://apps.apple.com/app/bhop-jump/id1227774947
+-        type: store
+-      - label: Google Play
+-        url: https://play.google.com/store/apps/details?id=com.dgs.bhop
+-        type: store
+-      - label: Deep Dive
+-        url: /showcase/bhop-jump
+-        type: product
+-    media:
+-      - type: image
+-        src: /media/projects/bhop-jump/01.jpg
+-        alt: "Bhop Jump gameplay screenshot"
+-        featured: true
+-
+-  - slug: s-s-platformer
+-    order: 6
+-    featured: true
+-    name: "S+S"
+-    role: Game Developer
+-    year: "2024"
+-    description: Mario-style web platformer commissioned by Sundukovy Sisters interior design studio as a birthday gift to the founders. Each level reflects a different era of the studio through branded interiors, custom bosses drawn in pokémon style, and a companion character with autonomous movement logic. Built in 3 weeks with PC and mobile support. Played by the whole team at the founders' corporate birthday party.
+-    theme: blue
+-    platforms: [Web]
+-    tags: [gamemaker, pixel-art, platformer, branded, web]
+-    stack: [GameMaker Studio]
+-    metrics:
+-      - label: Delivery
+-        value: "3 weeks"
+-      - label: Client
+-        value: "Forbes-featured studio"
+-      - label: Played at
+-        value: "Corporate event"
+-    links:
+-      - label: Play Game
+-        url: https://sundukovy.com/game
+-        type: demo
+-      - label: Deep Dive
+-        url: /showcase/s-s-platformer
+-        type: product
+-    media:
+-      - type: image
+-        src: /media/projects/s-s-platformer/cover.jpg
+-        alt: "S+S platformer screenshot"
+-        featured: true
+-
+-  - slug: lana-and-ronen
+-    order: 7
+-    name: Lana & Ronen
+-    role: Solo Developer — Level Design, Gameplay & Publishing
+-    year: "2019"
+-    description: Match-3 on Unity, 200+ levels across 5 biomes, 1M+ downloads on Google Play within six months. Built and published solo, with one artist on the team.
++    name: MekaHardcore
++    role: Author / Developer
++    year: ""
++    description: "Open-source Minecraft project written in Java."
+     theme: magenta
+-    featured: false
+-    platforms: [Android, iOS]
+-    tags: [unity, mobile, casual, level-design, match3]
+-    stack: [Unity, Firebase]
+-    metrics:
+-      - label: Downloads
+-        value: "1M+"
+-      - label: Levels
+-        value: "200+"
+-    media:
+-      - type: image
+-        src: /media/projects/lana-and-ronen/cover.png
+-        alt: "Lana & Ronen gameplay screenshot"
+-        featured: true
+-    links:
+-      - label: APKPure
+-        url: https://apkpure.com/lana-ronen/com.mkmx.lanam3
+-        type: store
+-      - label: Deep Dive
+-        url: /showcase/lana-and-ronen
+-        type: product
+-
+-  - slug: wings-gms-online
+-    order: 8
+-    name: Wings GMS Online
+-    role: Gameplay & Multiplayer Systems Engineer
+-    year: "2022"
+-    description: Real-time multiplayer aerial combat prototype with fake-3D perspective, orbital AI behavior and Node.js + Socket.io backend architecture.
+-    theme: cyan
+-    platforms: [Web]
+-    tags: [gamemaker, multiplayer, realtime, prototype, open-source]
+-    stack: [GameMaker, Node.js, Socket.io]
+-    metrics:
+-      - label: AI System
+-        value: "Orbital AI"
+-      - label: Camera
+-        value: "Dynamic Camera"
+-      - label: Lighting
+-        value: "Day/Night"
+-    links:
+-      - label: Github
+-        url: https://github.com/KeeGooRoomiE/WingsGMSOnline-MINDPLAYS-
+-        type: repo
+-      - label: Deep Dive
+-        url: /showcase/wings-gms-online
+-        type: product
+-    media:
+-      - type: video
+-        src: /media/projects/wings-gms-online/cover.mp4
+-        alt: "Wings gameplay screenshot"
+-        featured: true
+-
+-  - slug: afc-capital
+-    order: 9
+-    name: "AFC Capital Partners"
+-    role: Frontend Developer
+-    year: "2023"
+-    description: Corporate website for AFC Capital Partners, an infrastructure investment platform focused on sustainable capital mobilisation and ESG-driven projects across Africa.
+-    theme: blue
+-    platforms: [Web]
+-    tags: [frontend, enterprise, finance, angular]
+-    stack: [Angular, TypeScript, Tailwind CSS]
+-    metrics:
+-      - label: Sector
+-        value: "Infrastructure Finance"
+-      - label: Region
+-        value: "Pan-African"
+-    links:
+-      - label: Website
+-        url: https://www.afccapital.org/
+-        type: demo
+-      - label: Case Study
+-        url: https://aznresearch.com/en/work/afc-capital
+-        type: article
+-
+-  - slug: apple-watch-diceroll
+-    order: 10
+-    name: Apple Watch DiceRoll
+-    role: Swift / WatchOS Developer
+-    year: "2024"
+-    description: Minimalistic Apple Watch dice application built with SwiftUI, focused on fast interaction and clean watch-first UX.
+-    theme: cyan
+-    archived: true
+-    platforms: [watchOS]
+-    tags: [swift, watchos, open-source, utility]
+-    stack: [Swift, SwiftUI]
+-    metrics:
+-      - label: Platform
+-        value: "watchOS"
+-      - label: Status
+-        value: "Open Source"
++    platforms: [Minecraft, CurseForge]
++    tags: [java, minecraft, modding, open-source]
++    stack: [Java, Git]
+     links:
+-      - label: Github
+-        url: https://github.com/KeeGooRoomiE/AppleWatch_DiceRoll
++      - label: GitHub
++        url: https://github.com/Rumaruka
+         type: repo
+-    media:
+-      - type: image
+-        src: /media/projects/apple-watch-diceroll/cover.png
+-        alt: "Apple Watch DiceRoll app screen"
+-        featured: true
+ 
+-  - slug: africa-finance-corporation
+-    order: 11
+-    archived: true
+-    name: "Africa Finance Corporation"
+-    role: Frontend Developer
+-    year: "2023"
+-    description: Frontend implementation for the Africa Finance Corporation website, a pan-African multilateral financial institution driving large-scale infrastructure projects across energy, transport and industrial sectors.
+-    theme: emerald
+-    platforms: [Web]
+-    tags: [frontend, enterprise, govtech, finance, angular]
+-    stack: [Angular, TypeScript, Tailwind CSS]
+-    metrics:
+-      - label: AUM
+-        value: "$10B+ portfolio"
+-      - label: Members
+-        value: "47 countries"
+-    links:
+-      - label: Website
+-        url: https://www.africafc.org/
+-        type: demo
+-      - label: Case Study
+-        url: https://aznresearch.com/en/work/afc
+-        type: article
+-
+-  - slug: amaka-studio
+-    order: 12
+-    archived: true
+-    name: "Amaka Studio"
+-    role: Frontend Developer
+-    year: "2023"
+-    description: Corporate website for a creative digital studio connecting brands with design and content teams. Focused on responsive UI architecture and performance-driven frontend implementation.
+-    theme: emerald
+-    platforms: [Web]
+-    tags: [frontend, corporate, web, angular]
+-    stack: [Angular, TypeScript, Tailwind CSS]
+-    metrics:
+-      - label: Type
+-        value: "Creative Agency"
+-      - label: Stack
+-        value: "Angular + Tailwind"
+-    links:
+-      - label: Website
+-        url: https://amaka.studio/
+-        type: demo
+-
+-  - slug: thelo-db
+-    order: 13
+-    archived: true
+-    name: "Thelo DB Engineering"
+-    role: Frontend Developer
+-    year: "2023"
+-    description: Corporate engineering and consulting website for DB Engineering Consulting, supporting infrastructure and railway projects with structured enterprise UI components.
++  - slug: coolest-hardcore
++    order: 5
++    name: Coolest Hardcore
++    role: Author / Developer
++    year: ""
++    description: "Open-source Minecraft project written in Java."
+     theme: blue
+-    platforms: [Web]
+-    tags: [frontend, enterprise, infrastructure, angular]
+-    stack: [Angular, TypeScript, Tailwind CSS]
+-    metrics:
+-      - label: Sector
+-        value: "Railway Engineering"
+-      - label: Scope
+-        value: "Enterprise"
++    platforms: [Minecraft, CurseForge]
++    tags: [java, minecraft, modding, open-source]
++    stack: [Java, Git]
+     links:
+-      - label: Website
+-        url: https://db-engineering-consulting.com/en/
+-        type: demo
+-
+-  - slug: thelo-rs
+-    order: 14
+-    archived: true
+-    name: "Thelo Group"
+-    role: Frontend Developer
+-    year: "2023"
+-    description: Corporate website for Thelo Group, an African transport and logistics infrastructure company operating across rail, port and corridor development projects.
+-    theme: cyan
+-    platforms: [Web]
+-    tags: [frontend, infrastructure, enterprise, angular]
+-    stack: [Angular, TypeScript, Tailwind CSS]
+-    metrics:
+-      - label: Sector
+-        value: "Transport & Logistics"
+-      - label: Region
+-        value: "Africa"
+-    links:
+-      - label: Website
+-        url: https://thelo.africa/
+-        type: demo
+-
+-  - slug: timberman-mp
+-    order: 15
+-    archived: true
+-    name: Timberman Multiplayer
+-    role: Gameplay & Network Engineer
+-    year: "2022"
+-    description: Two-player real-time Timberman-style arcade game built in GameMaker with custom Node.js + Socket.io multiplayer backend.
+-    platforms: [Web, Windows]
+-    tags: [gamemaker, multiplayer, arcade, open-source]
+-    stack: [GameMaker, Node.js, Socket.io]
+-    metrics:
+-      - label: Players
+-        value: "2P Online"
+-      - label: Status
+-        value: "Open Source"
+-    links:
+-      - label: Github
+-        url: https://github.com/KeeGooRoomiE/timbermanMPGMS
++      - label: GitHub
++        url: https://github.com/Rumaruka
+         type: repo
+-      - label: Deep Dive
+-        url: /showcase/timberman-mp
+-        type: product
+-    media:
+-      - type: video
+-        src: /media/projects/timberman-mp/cover.mp4
+-        alt: "Timberman multiplayer gameplay"
+-        featured: true
+-
+-  - slug: aniplanes
+-    order: 16
+-    archived: true
+-    name: AniPlanes
+-    role: Unity Game Developer
+-    year: "2022"
+-    description: Animal-themed airplane racer with AI opponents, focused on fast arcade flight feel and progression-driven gameplay.
+-    theme: magenta
+-    platforms: [Android, iOS]
+-    tags: [unity, mobile, arcade, racing]
+-    stack: [Unity, C#]
+-    links:
+-      - label: APKPure
+-        url: https://apkpure.com/aniplanes/com.ani.planes
+-        type: store
+-    media:
+-      - type: image
+-        src: /media/projects/aniplanes/cover.png
+-        alt: "AniPlanes gameplay screenshot"
+-        featured: true
+-
+-  - slug: gunfire
+-    order: 17
+-    archived: true
+-    name: GunFire
+-    role: Gameplay Engineer
+-    year: "2021"
+-    description: Fast-paced arcade shooter prototype focused on weapon systems, enemy waves and responsive combat feel.
+-    theme: cyan
+-    platforms: [Windows, Android, iOS]
+-    tags: [gamemaker, shooter, arcade, multiplayer]
+-    stack: [GameMaker, Node.js]
+-    metrics:
+-      - label: Multiplayer
+-        value: "Online PvP"
+-      - label: Tools
+-        value: "Level Editor"
+-    links:
+-      - label: Trashbox
+-        url: https://trashbox.ru/link/cs2d-for-android-gunfire
+-        type: store
+-    media:
+-      - type: image
+-        src: /media/projects/gunfire/cover.jpg
+-        alt: "GunFire gameplay screenshot"
+-        featured: true
+-
+-  - slug: dodge-agent
+-    order: 18
+-    archived: true
+-    name: Dodge Agent
+-    role: Gameplay & Level Designer
+-    year: "2021"
+-    description: Hyper-casual timing game where a ninja jumps between platforms while dodging laser traps.
+-    platforms: [Android]
+-    tags: [unity, mobile, hyper-casual, action]
+-    stack: [Unity, C#]
+-    links:
+-      - label: Google Play
+-        url: https://play.google.com/store/apps/details?id=com.weave.dodgeagent
+-        type: store
+-    media:
+-      - type: image
+-        src: /media/projects/dodge-agent/cover.jpg
+-        alt: "Dodge Agent gameplay"
+-        featured: true
+-
+-  - slug: pop-them-all
+-    order: 19
+-    archived: true
+-    name: Pop Them All
+-    role: Gameplay & Level Designer
+-    year: "2021"
+-    description: Hyper-casual pop-it style game where players clear tactile boards to unlock new patterns and visual sets.
+-    platforms: [Android]
+-    tags: [unity, mobile, hyper-casual, casual]
+-    stack: [Unity, C#]
+-    links:
+-      - label: Google Play
+-        url: https://play.google.com/store/apps/details?id=com.weaveGames.popthemall
+-        type: store
+-
+-  - slug: hole-run
+-    order: 20
+-    archived: true
+-    name: Hole Run
+-    role: Gameplay & Level Designer
+-    year: "2021"
+-    description: Hyper-casual runner where a moving hole collects falling blocks and later builds structures from gathered pieces.
+-    platforms: [Android]
+-    tags: [unity, mobile, hyper-casual, runner]
+-    stack: [Unity, C#]
+-    links:
+-      - label: Google Play
+-        url: https://play.google.com/store/apps/details?id=com.sketchteam.ColorBallSketch
+-        type: store
+-
+-  - slug: personality-shift
+-    order: 21
+-    archived: true
+-    name: Personality Shift
+-    role: Gameplay & Level Designer
+-    year: "2021"
+-    description: Hyper-casual runner for a female audience featuring outfit-based transformation segments inspired by shape-shifting mechanics.
+-    platforms: [Android]
+-    tags: [unity, mobile, hyper-casual, runner]
+-    stack: [Unity, C#]
+-    media:
+-      - type: image
+-        src: /media/projects/personality-shift/cover.png
+-        alt: "Personality Shift gameplay"
+-        featured: true
+-
+-  - slug: flower-king
+-    order: 22
+-    archived: true
+-    name: "Flower King: Collect and Grow"
+-    role: Level Designer
+-    year: "2020"
+-    description: Casual match-3 puzzle game with handcrafted levels and relaxing visual progression built in Unity.
+-    theme: emerald
+-    platforms: [Android, iOS]
+-    tags: [unity, mobile, casual, match3, level-design]
+-    stack: [Unity, C#]
+-    metrics:
+-      - label: Downloads
+-        value: "50K+"
+-    links:
+-      - label: App Store
+-        url: https://apps.apple.com/app/flower-king-collect-and-grow/id1519456312
+-        type: store
+-      - label: APKPure
+-        url: https://apkpure.com/flower-king-collect-and-grow/com.flower.king.game
+-        type: store
+-    media:
+-      - type: image
+-        src: /media/projects/flower-king/cover.png
+-        alt: "Flower King: Collect and Grow gameplay"
+-        featured: true
+-
+-  - slug: park-them-all
+-    order: 23
+-    archived: true
+-    name: Park Them All
+-    role: Gameplay & Level Designer
+-    year: "2020"
+-    description: Hyper-casual parking simulator where players place cars into correct spots under increasing level complexity.
+-    platforms: [Android]
+-    tags: [unity, mobile, hyper-casual, simulation]
+-    stack: [Unity, C#]
+-    media:
+-      - type: image
+-        src: /media/projects/park-them-all/cover.png
+-        alt: "Park Them All gameplay"
+-        featured: true
+-
+-  - slug: candy-merge
+-    order: 24
+-    archived: true
+-    name: Candy Merge
+-    role: Gameplay & Level Designer
+-    year: "2020"
+-    description: Hyper-casual match-3 game combined with 2048-style merge mechanics and progressive puzzle difficulty.
+-    platforms: [Android]
+-    tags: [unity, mobile, hyper-casual, casual, match3]
+-    stack: [Unity, C#]
+-    links:
+-      - label: Google Play
+-        url: https://play.google.com/store/search?q=Candy%20Merge&c=apps
+-        type: store
+-    media:
+-      - type: image
+-        src: /media/projects/candy-merge/cover.jpg
+-        alt: "Candy Merge gameplay"
+-        featured: true
+-
+-  - slug: break-stack-tower
+-    order: 25
+-    archived: true
+-    name: "Break Stack Tower"
+-    role: Gameplay & Level Designer
+-    year: "2020"
+-    description: Arcade hyper-casual tower breaking game with physics-based destruction mechanics and level progression.
+-    platforms: [Android]
+-    tags: [unity, mobile, hyper-casual, arcade]
+-    stack: [Unity, C#]
+-    metrics:
+-      - label: Downloads
+-        value: "50K+"
+-    links:
+-      - label: Google Play
+-        url: https://play.google.com/store/apps/details?id=com.towerbreak.app
+-        type: store
+-
+-  - slug: wonder-blast-alice-friends
+-    order: 26
+-    archived: true
+-    name: "Wonder Blast – Alice & Friends"
+-    role: Level Designer
+-    year: "2020"
+-    description: Alice in Wonderland themed cube‑match puzzle game built in Unity with large-scale level progression and puzzle balancing.
+-    theme: auto
+-    platforms: [iOS, Android]
+-    tags: [unity, mobile, puzzle, match3, level-design]
+-    stack: [Unity, C#]
+-    metrics:
+-      - label: Levels Designed
+-        value: "1500+"
+-      - label: Total Levels
+-        value: "2500 (incl. unreleased)"
+-    links:
+-      - label: APKPure
+-        url: https://apkpure.com/wonder-blast/com.popside.alice
+-        type: store
+-    media:
+-      - type: image
+-        src: /media/projects/wonder-blast-alice-friends/cover.png
+-        alt: "Wonder Blast gameplay"
+-        featured: true
+-
+-  - slug: solitaire-resort
+-    order: 27
+-    archived: true
+-    name: "Solitaire Resort"
+-    role: Level Designer & Game Balance Designer
+-    year: "2020"
+-    description: Mobile Tripeaks solitaire puzzle game featuring island progression, economy tuning and long-form level balancing.
+-    theme: auto
+-    platforms: [iOS, Android]
+-    tags: [unity, mobile, solitaire, puzzle, level-design]
+-    stack: [Unity, C#]
+-    metrics:
+-      - label: Levels Designed
+-        value: "500+"
+-    media:
+-      - type: image
+-        src: /media/projects/solitaire-resort/cover.png
+-        alt: "Solitaire Resort gameplay"
+-        featured: true
+-
+-  - slug: cookie-crush
+-    order: 28
+-    archived: true
+-    name: "Cookie Crush"
+-    role: Level Designer
+-    year: "2020"
+-    description: Match-3 candy puzzle game where I designed and balanced level progression, including proposing and prototyping new mechanics.
+-    theme: auto
+-    platforms: [Android]
+-    tags: [unity, mobile, puzzle, match3, level-design]
+-    stack: [Unity, C#]
+-    metrics:
+-      - label: Levels Designed
+-        value: "300+"
+-    links:
+-      - label: APKPure
+-        url: https://apkpure.net/cookie-crush-candy-match-3/com.guuby.candy
+-        type: store
+-
+-  - slug: helens-quiz
+-    order: 29
+-    archived: true
+-    name: Helens Quiz
+-    role: Gameplay & UI Designer
+-    year: "2019"
+-    description: Match-3 puzzle game with over 300 crafted levels, dynamic backgrounds and level progression systems built in Unity.
+-    theme: magenta
+-    platforms: [Android, iOS]
+-    tags: [unity, mobile, casual, match3, level-design]
+-    stack: [Unity, C#]
+-    metrics:
+-      - label: Downloads
+-        value: "50K+"
+-      - label: Levels
+-        value: "300+"
+-    links:
+-      - label: APKPure
+-        url: https://apkpure.com/helen-s-quiz/com.mkmx.helenq
+-        type: store
+-    media:
+-      - type: image
+-        src: /media/projects/helens-quiz/cover.png
+-        alt: "Helens Quiz gameplay screenshot"
+-        featured: true
+-
+-  - slug: westland
+-    order: 30
+-    archived: true
+-    name: Westland
+-    role: Gameplay Developer
+-    year: "2019"
+-    description: Isometric pixel-art top-down zombie shooter set in a brutal Wild West world, featuring heavy gore and fast-paced combat arenas.
+-    theme: cyan
+-    platforms: [Windows]
+-    tags: [gamemaker, shooter, pixel-art, prototype]
+-    stack: [GameMaker]
+-    metrics:
+-      - label: Type
+-        value: "Personal Project"
+-      - label: Status
+-        value: "Prototype"
+-    media:
+-      - type: image
+-        src: /media/projects/westland/cover.jpg
+-        alt: "Westland gameplay screenshot"
+-        featured: true
+-
+-  - slug: kalina-malina-delivery
+-    order: 31
+-    archived: true
+-    name: "Калина‑Малина: доставка еды"
+-    role: Mobile App Developer
+-    year: "2018"
+-    description: Mobile food and grocery delivery app with ordering, product catalog and loyalty system built in Unity.
+-    theme: cyan
+-    platforms: [Android, iOS]
+-    tags: [unity, mobile, ecommerce, delivery]
+-    stack: [Unity, C#]
+-    metrics:
+-      - label: Downloads
+-        value: "100K+"
+-    links:
+-      - label: App Store
+-        url: https://apps.apple.com/app/калина-малина-доставка-еды/id1597124884
+-        type: store
+-      - label: Google Play
+-        url: https://play.google.com/store/apps/details?id=com.getmeback.kalinamalina
+-        type: store
+-
+-  - slug: transport-railroad-crossing
+-    order: 32
+-    archived: true
+-    name: Transport Railroad Crossing
+-    role: Gameplay Designer & Developer
+-    year: "2018"
+-    description: Crossy Road–style arcade game featuring dynamic traffic logic and railway crossing systems with train-triggered vehicle stopping behavior.
+-    platforms: [Android]
+-    tags: [gamemaker, mobile, arcade, casual]
+-    stack: [GameMaker]
+-    metrics:
+-      - label: Type
+-        value: "Personal Project"
+-    media:
+-      - type: image
+-        src: /media/projects/transport-railroad-crossing/cover.jpeg
+-        alt: "Transport Railroad Crossing gameplay"
+-        featured: true
+-
+-  - slug: filtap
+-    order: 33
+-    archived: true
+-    name: "Filtap!"
+-    role: Game Developer
+-    year: "2018"
+-    description: Single-mechanic mobile puzzle built in GameMaker Studio, released on Android.
+-    theme: emerald
+-    platforms: [Android]
+-    stack: [GameMaker Studio]
+-    links:
+-      - label: APKTurbo
+-        url: https://www.apkturbo.com/games/filtap/com.zef.filtap/
+-        type: store
+-    media:
+-      - type: image
+-        src: /media/projects/filtap/cover.jpg
+-        alt: "Filtap! cover"
+-        featured: true
+-
+-  - slug: box-keeper
+-    order: 34
+-    archived: true
+-    name: Box Keeper
+-    role: Game Developer
+-    year: "2018"
+-    description: Mobile roguelike built in GameMaker Studio with a focused core loop and replayable runs. Shipped primarily for iOS with an Android build.
+-    theme: magenta
+-    platforms: [iOS, Android]
+-    tags: [gamemaker, mobile, roguelike, puzzle]
+-    stack: [GameMaker Studio]
+-    links:
+-      - label: APKTurbo
+-        url: https://www.apkturbo.com/games/box-keeper/com.dgs.bkeep/
+-        type: store
+-      - label: App Store
+-        url: https://apps.apple.com/us/search?term=Box%20Keeper
+-        type: store
+-    media:
+-      - type: image
+-        src: /media/projects/box-keeper/cover.png
+-        alt: "Box Keeper cover"
+-        featured: true
+-
+-  - slug: wrap
+-    order: 35
+-    archived: true
+-    name: "Wrap!"
+-    role: Game Developer
+-    year: "2017"
+-    description: Minimal one-mechanic puzzle built in GameMaker Studio, shipped on Android and iOS.
+-    theme: blue
+-    platforms: [Android, iOS]
+-    stack: [GameMaker Studio]
+-    media:
+-      - type: image
+-        src: /media/projects/wrap/cover.jpg
+-        alt: "Wrap! cover"
+-        featured: true
+-
+-  - slug: recolor
+-    order: 36
+-    archived: true
+-    name: Recolor
+-    role: Game Developer
+-    year: "2017"
+-    description: Minimal one-mechanic puzzle built in GameMaker Studio, shipped on Android and iOS.
+-    theme: blue
+-    platforms: [Android, iOS]
+-    stack: [GameMaker Studio]
+-    media:
+-      - type: image
+-        src: /media/projects/recolor/cover.jpg
+-        alt: "Recolor cover"
+-        featured: true
+-
+-  - slug: make-it-work
+-    order: 37
+-    archived: true
+-    name: "Make It Work!"
+-    role: Game Developer
+-    year: "2016"
+-    description: Small vector-driven Game Maker Studio clicker with focus on early mobile platforms.
+-    theme: magenta
+-    platforms: [iOS, Android, Amazon]
+-    tags: [gamemaker, mobile, clicker, casual]
+-    stack: [GameMaker Studio]
+-    links:
+-      - label: Amazon Appstore
+-        url: https://www.amazon.co.jp/DragonGameStudios-Make-it-Work/dp/B07CK73BXC
+-        type: store
+-      - label: APKTurbo
+-        url: https://www.apkturbo.com/games/make-it-work/com.dgs.miwfull/
+-        type: store
+-    media:
+-      - type: image
+-        src: /media/projects/make-it-work/cover.jpg
+-        alt: "Make It Work! clicker gameplay"
+-        featured: true
+\ No newline at end of file
+diff --git a/src/content/showcase/projects_ru.yaml b/src/content/showcase/projects_ru.yaml
+index a929858..62ca290 100644
+--- a/src/content/showcase/projects_ru.yaml
++++ b/src/content/showcase/projects_ru.yaml
+@@ -1,849 +1,79 @@
+ projects:
+-  - slug: cv-hub
++  - slug: thaumic-bases-unofficial
+     order: 1
+-    name: CV Hub
+-    role: Создатель
+-    year: "2026"
+-    description: Платформа для персонального CV с управлением через данные, построенная на Astro и YAML как едином источнике правды. Заменяет статические резюме и no-code решения на расширяемую систему с версионированием.
++    name: Thaumic Bases Unofficial
++    role: Мейнтейнер / Разработчик
++    year: "2015"
++    description: "Портирование и поддержка мода Thaumic Bases: исправление багов, обновление под новые версии платформы, поддержка совместимости с другими модами и работа с пользователями."
+     theme: blue
+     featured: true
+-    platforms: [Веб, GitHub Pages]
+-    tags: [astro, yaml, automation, ci-cd, open-source]
+-    metrics:
+-      - label: Бесплатно для всех
+-        value: "Открытый код"
+-      - label: Бесплатный хостинг
+-        value: "GitHub Pages"
+-      - label: Живой сервис
+-        value: "Это он"
+-    stack: [Astro, TypeScript, YAML, GitHub Actions, CSS]
++    platforms: [Minecraft, CurseForge]
++    tags: [java, minecraft, modding, open-source]
++    stack: [Java, Gradle, Git]
+     links:
++      - label: CurseForge
++        url: https://www.curseforge.com/minecraft/mc-mods/thaumic-bases-unofficial
++        type: store
+       - label: GitHub
+-        url: https://github.com/KeeGooRoomiE/cv_hub
++        url: https://github.com/Rumaruka
+         type: repo
+-      - label: Изменения
+-        url: /changelog
+-        type: article
+-      - label: Подробнее
+-        url: /showcase/cv-hub
+-        type: product
+ 
+-  - slug: wikinest
++  - slug: vanillaplus
+     order: 2
+-    name: WikiNest
++    name: VanillaPlus+
+     role: Автор / Разработчик
+-    year: "2026"
+-    description: Git-нативная вики для небольших инженерных команд. Браузерный markdown-редактор, где каждое сохранение — это Git-коммит. Никакого сервера, базы данных и сборки. Распространяется одним HTML-файлом.
++    year: ""
++    description: "Open-source проект для Minecraft на Java."
+     theme: cyan
+-    featured: true
+-    platforms: [Веб, GitHub Pages, GitLab Pages]
+-    tags: [open-source, wiki, markdown, git, no-build, static]
+-    stack: [HTML, CSS, GitHub API, GitLab API]
+-    metrics:
+-      - label: Зависимости
+-        value: "Ноль"
+-      - label: Настройка
+-        value: "2 минуты"
+-      - label: Хранилище
+-        value: "Git репо"
++    platforms: [Minecraft, CurseForge]
++    tags: [java, minecraft, modding, open-source]
++    stack: [Java, Git]
+     links:
+       - label: GitHub
+-        url: https://github.com/KeeGooRoomiE/wikinest
++        url: https://github.com/Rumaruka
+         type: repo
+-      - label: Демо
+-        url: https://keegooroomie.github.io/wikinest
+-        type: demo
+-      - label: Подробнее
+-        url: /showcase/wikinest
+-        type: product
+ 
+-  - slug: steam-deck-keyboard
++  - slug: simple-grinder
+     order: 3
+-    name: Steam Deck Custom Keyboard
+-    role: Создатель / Мейнтейнер
+-    year: "2025"
+-    description: Шаблон темы клавиатуры для Steam Deck с возможностью кастомизации, системой пресетов и настройкой цветов в рантайме через CSS Loader UI.
+-    theme: cyan
+-    featured: true
+-    platforms: [SteamOS, Linux]
+-    tags: [open-source, steam-deck, ui, theming, css]
+-    stack: [CSS, JSON, Decky Loader]
+-    metrics:
+-      - label: Установки
+-        value: "17K+"
+-      - label: Рейтинг DeckThemes
+-        value: "60⭐"
++    name: Simple Grinder
++    role: Автор / Разработчик
++    year: ""
++    description: "Open-source проект для Minecraft на Java."
++    theme: emerald
++    platforms: [Minecraft, CurseForge]
++    tags: [java, minecraft, modding, open-source]
++    stack: [Java, Git]
+     links:
+       - label: GitHub
+-        url: https://github.com/KeeGooRoomiE/Steam-Deck-Keyboard-CSS-Loader-Template
++        url: https://github.com/Rumaruka
+         type: repo
+-      - label: DeckThemes
+-        url: https://deckthemes.com/themes/view?themeId=0c5d6c86-ef3e-4af7-a041-34731a51fe7f
+-    media:
+-      - type: image
+-        src: /media/projects/steam-deck-keyboard/cover.png
+-        alt: "Превью кастомной темы клавиатуры Steam Deck"
+-        featured: true
+ 
+-  - slug: sand-balls
++  - slug: mekahardcore
+     order: 4
+-    name: Sand Balls
+-    role: Дизайнер уровней и систем
+-    year: "2020"
+-    description: Разработка core-геймплея, балансировка и оптимизация производительности для мобильной аркады с глобальной аудиторией и высокими позициями в чартах.
+-    theme: emerald
+-    featured: true
+-    platforms: [iOS, Android]
+-    tags: [unity, mobile, gameplay, production, casual]
+-    stack: [Unity, C#, Mobile Optimization]
+-    metrics:
+-      - label: Скачивания
+-        value: "100M+"
+-      - label: Позиция в сторе
+-        value: "Top-3 Arcade"
+-    links:
+-      - label: App Store
+-        url: https://apps.apple.com/app/sand-balls/id1483631996
+-        type: store
+-      - label: Google Play
+-        url: https://play.google.com/store/apps/details?id=com.water.balls
+-        type: store
+-    media:
+-      - type: image
+-        src: /media/projects/sand-balls/cover.png
+-        alt: "Sand Balls скриншот геймплея"
+-        featured: true
+-
+-  - slug: bhop-jump
+-    order: 5
+-    name: Bhop Jump
+-    role: Геймплейный и мультиплеерный инженер
+-    year: "2017"
+-    description: Соревновательная мобильная паркур-игра, вдохновлённая bhop-механиками, с упором на скилловое движение и мультиплеер в реальном времени.
+-    theme: blue
+-    featured: true
+-    platforms: [iOS, Android]
+-    tags: [unity, mobile, multiplayer, arcade]
+-    stack: [Unity, C#]
+-    metrics:
+-      - label: Доход
+-        value: "$160K+ (Q1 2017)"
+-      - label: Скачивания
+-        value: "100K+"
+-    links:
+-      - label: App Store
+-        url: https://apps.apple.com/app/bhop-jump/id1227774947
+-        type: store
+-      - label: Google Play
+-        url: https://play.google.com/store/apps/details?id=com.dgs.bhop
+-        type: store
+-      - label: Подробнее
+-        url: /showcase/bhop-jump
+-        type: product
+-    media:
+-      - type: image
+-        src: /media/projects/bhop-jump/01.jpg
+-        alt: "Bhop Jump скриншот геймплея"
+-        featured: true
+-
+-  - slug: s-s-platformer
+-    order: 6
+-    featured: true
+-    name: "S+S"
+-    role: Разработчик игры
+-    year: "2024"
+-    description: Веб-платформер в стиле Mario, созданный по заказу студии дизайна интерьеров Sundukovy Sisters как подарок ко дню рождения основателей. Каждый уровень отражает этап развития студии через фирменные интерьеры, кастомных боссов в стиле Pokémon и компаньона с автономным поведением. Реализован за 3 недели с поддержкой ПК и мобильных устройств. Игру проходила вся команда на корпоративе.
+-    theme: blue
+-    platforms: [Веб]
+-    tags: [gamemaker, pixel-art, platformer, branded, web]
+-    stack: [GameMaker Studio]
+-    metrics:
+-      - label: Срок разработки
+-        value: "3 недели"
+-      - label: Клиент
+-        value: "Студия из Forbes"
+-      - label: Использование
+-        value: "Корпоративное мероприятие"
+-    links:
+-      - label: Играть
+-        url: https://sundukovy.com/game
+-        type: demo
+-      - label: Подробнее
+-        url: /showcase/s-s-platformer
+-        type: product
+-    media:
+-      - type: image
+-        src: /media/projects/s-s-platformer/cover.jpg
+-        alt: "S+S скриншот"
+-        featured: true
+-
+-  - slug: lana-and-ronen
+-    order: 7
+-    name: Lana & Ronen
+-    role: Единственный разработчик — геймдизайн, код, публикация
+-    year: "2019"
+-    description: Match-3 на Unity, 200+ уровней в 5 биомах, 1M+ скачиваний на Google Play за полгода. Разработка и публикация в одиночку, плюс один художник в команде.
++    name: MekaHardcore
++    role: Автор / Разработчик
++    year: ""
++    description: "Open-source проект для Minecraft на Java."
+     theme: magenta
+-    featured: false
+-    platforms: [Android, iOS]
+-    tags: [unity, mobile, casual, level-design, match3]
+-    stack: [Unity, Firebase]
+-    metrics:
+-      - label: Скачивания
+-        value: "1M+"
+-      - label: Уровни
+-        value: "200+"
+-    media:
+-      - type: image
+-        src: /media/projects/lana-and-ronen/cover.png
+-        alt: "Lana & Ronen геймплей"
+-        featured: true
+-    links:
+-      - label: APKPure
+-        url: https://apkpure.com/lana-ronen/com.mkmx.lanam3
+-        type: store
+-      - label: Deep Dive
+-        url: /showcase/lana-and-ronen
+-        type: product
+-
+-  - slug: wings-gms-online
+-    order: 8
+-    name: Wings GMS Online
+-    role: Инженер геймплея и мультиплеерных систем
+-    year: "2022"
+-    description: Прототип воздушного боя в реальном времени с псевдо-3D перспективой, орбитальным AI и backend-архитектурой на Node.js + Socket.io.
+-    theme: cyan
+-    platforms: [Веб]
+-    tags: [gamemaker, multiplayer, realtime, prototype, open-source]
+-    stack: [GameMaker, Node.js, Socket.io]
+-    metrics:
+-      - label: AI система
+-        value: "Орбитальный AI"
+-      - label: Камера
+-        value: "Динамическая"
+-      - label: Освещение
+-        value: "День/Ночь"
+-    links:
+-      - label: GitHub
+-        url: https://github.com/KeeGooRoomiE/WingsGMSOnline-MINDPLAYS-
+-        type: repo
+-      - label: Подробнее
+-        url: /showcase/wings-gms-online
+-        type: product
+-    media:
+-      - type: video
+-        src: /media/projects/wings-gms-online/cover.mp4
+-        alt: "Wings геймплей"
+-        featured: true
+-
+-  - slug: afc-capital
+-    order: 9
+-    name: "AFC Capital Partners"
+-    role: Frontend-разработчик
+-    year: "2023"
+-    description: Корпоративный сайт для AFC Capital Partners — инвестиционной platforms, ориентированной на инфраструктурные проекты и ESG в Африке.
+-    theme: blue
+-    platforms: [Веб]
+-    tags: [frontend, корпоративный сектор, финансы, angular]
+-    stack: [Angular, TypeScript, Tailwind CSS]
+-    metrics:
+-      - label: Сектор
+-        value: "Инфраструктурные инвестиции"
+-      - label: Регион
+-        value: "Африка"
+-    links:
+-      - label: Сайт
+-        url: https://www.afccapital.org/
+-        type: demo
+-      - label: Кейс
+-        url: https://aznresearch.com/en/work/afc-capital
+-        type: article
+-
+-  - slug: apple-watch-diceroll
+-    order: 10
+-    name: Apple Watch DiceRoll
+-    role: Разработчик Swift / watchOS
+-    year: "2024"
+-    description: Минималистичное приложение-кубик для Apple Watch, созданное на SwiftUI с фокусом на быстрые взаимодействия и чистый watch-first UX.
+-    theme: cyan
+-    archived: true
+-    platforms: [watchOS]
+-    tags: [swift, watchos, open-source, утилита]
+-    stack: [Swift, SwiftUI]
+-    metrics:
+-      - label: Платформа
+-        value: "watchOS"
+-      - label: Статус
+-        value: "Открытый код"
++    platforms: [Minecraft, CurseForge]
++    tags: [java, minecraft, modding, open-source]
++    stack: [Java, Git]
+     links:
+       - label: GitHub
+-        url: https://github.com/KeeGooRoomiE/AppleWatch_DiceRoll
++        url: https://github.com/Rumaruka
+         type: repo
+-    media:
+-      - type: image
+-        src: /media/projects/apple-watch-diceroll/cover.png
+-        alt: "Экран приложения DiceRoll для Apple Watch"
+-        featured: true
+ 
+-  - slug: africa-finance-corporation
+-    order: 11
+-    archived: true
+-    name: "Africa Finance Corporation"
+-    role: Frontend-разработчик
+-    year: "2023"
+-    description: Реализация фронтенда для сайта Africa Finance Corporation — панафриканской финансовой организации, развивающей крупные инфраструктурные проекты в энергетике, транспорте и промышленности.
+-    theme: emerald
+-    platforms: [Веб]
+-    tags: [frontend, корпоративный сектор, govtech, финансы, angular]
+-    stack: [Angular, TypeScript, Tailwind CSS]
+-    metrics:
+-      - label: Активы под управлением
+-        value: "$10B+ portfolio"
+-      - label: Участники
+-        value: "47 стран"
+-    links:
+-      - label: Сайт
+-        url: https://www.africafc.org/
+-        type: demo
+-      - label: Кейс
+-        url: https://aznresearch.com/en/work/afc
+-        type: article
+-
+-  - slug: amaka-studio
+-    order: 12
+-    archived: true
+-    name: "Amaka Studio"
+-    role: Frontend-разработчик
+-    year: "2023"
+-    description: Корпоративный сайт для креативной digital-студии, соединяющей бренды с командами дизайна и контента. Фокус на адаптивной архитектуре UI и производительном фронтенде.
+-    theme: emerald
+-    platforms: [Веб]
+-    tags: [frontend, креатив, веб, angular]
+-    stack: [Angular, TypeScript, Tailwind CSS]
+-    metrics:
+-      - label: Тип
+-        value: "Креативное агентство"
+-      - label: stack
+-        value: "Angular + Tailwind"
+-    links:
+-      - label: Сайт
+-        url: https://amaka.studio/
+-        type: demo
+-
+-  - slug: thelo-db
+-    order: 13
+-    archived: true
+-    name: "Thelo DB Engineering"
+-    role: Frontend-разработчик
+-    year: "2023"
+-    description: Корпоративный сайт инженерно-консалтинговой компании DB Engineering Consulting с поддержкой инфраструктурных и железнодорожных проектов и enterprise UI-компонентами.
++  - slug: coolest-hardcore
++    order: 5
++    name: Coolest Hardcore
++    role: Автор / Разработчик
++    year: ""
++    description: "Open-source проект для Minecraft на Java."
+     theme: blue
+-    platforms: [Веб]
+-    tags: [frontend, корпоративный сектор, инфраструктура, angular]
+-    stack: [Angular, TypeScript, Tailwind CSS]
+-    metrics:
+-      - label: Сектор
+-        value: "Железнодорожная инженерия"
+-      - label: Масштаб
+-        value: "Корпоративный"
+-    links:
+-      - label: Сайт
+-        url: https://db-engineering-consulting.com/en/
+-        type: demo
+-
+-  - slug: thelo-rs
+-    order: 14
+-    archived: true
+-    name: "Thelo Group"
+-    role: Frontend-разработчик
+-    year: "2023"
+-    description: Корпоративный сайт для Thelo Group — африканской компании в сфере транспортной и логистической инфраструктуры, работающей с железнодорожными, портовыми и коридорными проектами.
+-    theme: cyan
+-    platforms: [Веб]
+-    tags: [frontend, инфраструктура, корпоративный сектор, angular]
+-    stack: [Angular, TypeScript, Tailwind CSS]
+-    metrics:
+-      - label: Сектор
+-        value: "Транспорт и логистика"
+-      - label: Регион
+-        value: "Африка"
+-    links:
+-      - label: Сайт
+-        url: https://thelo.africa/
+-        type: demo
+-
+-  - slug: timberman-mp
+-    order: 15
+-    archived: true
+-    name: Timberman Multiplayer
+-    role: Инженер геймплея и сетевых систем
+-    year: "2022"
+-    description: Двухпользовательская аркадная игра в стиле Timberman в реальном времени, реализованная в GameMaker с собственным мультиплеерным backend на Node.js и Socket.io.
+-    platforms: [Веб, Windows]
+-    tags: [gamemaker, мультиплеер, аркада, open-source]
+-    stack: [GameMaker, Node.js, Socket.io]
+-    metrics:
+-      - label: Игроки
+-        value: "2 игрока онлайн"
+-      - label: Статус
+-        value: "Открытый код"
++    platforms: [Minecraft, CurseForge]
++    tags: [java, minecraft, modding, open-source]
++    stack: [Java, Git]
+     links:
+       - label: GitHub
+-        url: https://github.com/KeeGooRoomiE/timbermanMPGMS
++        url: https://github.com/Rumaruka
+         type: repo
+-      - label: Deep Dive
+-        url: /showcase/timberman-mp
+-        type: product
+-    media:
+-      - type: video
+-        src: /media/projects/timberman-mp/cover.mp4
+-        alt: "Timberman multiplayer gameplay"
+-        featured: true
+-
+-  - slug: aniplanes
+-    order: 16
+-    archived: true
+-    name: AniPlanes
+-    role: Разработчик Unity
+-    year: "2022"
+-    description: Аркадная гонка на самолётах с животными и AI-соперниками, с акцентом на быстрый темп полёта и прогрессию игрового процесса.
+-    theme: magenta
+-    platforms: [Android, iOS]
+-    tags: [unity, мобильная игра, аркада, гонки]
+-    stack: [Unity, C#]
+-    links:
+-      - label: APKPure
+-        url: https://apkpure.com/aniplanes/com.ani.planes
+-        type: store
+-    media:
+-      - type: image
+-        src: /media/projects/aniplanes/cover.png
+-        alt: "AniPlanes gameplay screenshot"
+-        featured: true
+-
+-  - slug: gunfire
+-    order: 17
+-    archived: true
+-    name: GunFire
+-    role: Инженер геймплея
+-    year: "2021"
+-    description: Прототип динамичного аркадного шутера с упором на оружейные системы, волны врагов и отзывчивое ощущение боя.
+-    theme: cyan
+-    platforms: [Windows, Android, iOS]
+-    tags: [gamemaker, shooter, arcade, multiplayer]
+-    stack: [GameMaker, Node.js]
+-    metrics:
+-      - label: Мультиплеер
+-        value: "Онлайн PvP"
+-      - label: Инструменты
+-        value: "Редактор уровней"
+-    links:
+-      - label: Trashbox
+-        url: https://trashbox.ru/link/cs2d-for-android-gunfire
+-        type: store
+-    media:
+-      - type: image
+-        src: /media/projects/gunfire/cover.jpg
+-        alt: "GunFire gameplay screenshot"
+-        featured: true
+-
+-  - slug: dodge-agent
+-    order: 18
+-    archived: true
+-    name: Dodge Agent
+-    role: Геймплей и Level Designer
+-    year: "2021"
+-    description: Hyper-casual игра на тайминги, где ниндзя прыгает между платформами, уклоняясь от лазерных ловушек.
+-    platforms: [Android]
+-    tags: [unity, mobile, hyper-casual, action]
+-    stack: [Unity, C#]
+-    links:
+-      - label: Google Play
+-        url: https://play.google.com/store/apps/details?id=com.weave.dodgeagent
+-        type: store
+-    media:
+-      - type: image
+-        src: /media/projects/dodge-agent/cover.jpg
+-        alt: "Dodge Agent gameplay"
+-        featured: true
+-
+-  - slug: pop-them-all
+-    order: 19
+-    archived: true
+-    name: Pop Them All
+-    role: Геймплей и Level Designer
+-    year: "2021"
+-    description: Hyper-casual игра в стиле pop-it, где игрок очищает доски, открывая новые паттерны и визуальные наборы.
+-    platforms: [Android]
+-    tags: [unity, mobile, hyper-casual, casual]
+-    stack: [Unity, C#]
+-    links:
+-      - label: Google Play
+-        url: https://play.google.com/store/apps/details?id=com.weaveGames.popthemall
+-        type: store
+-
+-  - slug: hole-run
+-    order: 20
+-    archived: true
+-    name: Hole Run
+-    role: Геймплей и Level Designer
+-    year: "2021"
+-    description: Hyper-casual раннер, где движущаяся дыра собирает падающие блоки и затем строит структуры из собранных элементов.
+-    platforms: [Android]
+-    tags: [unity, mobile, hyper-casual, runner]
+-    stack: [Unity, C#]
+-    links:
+-      - label: Google Play
+-        url: https://play.google.com/store/apps/details?id=com.sketchteam.ColorBallSketch
+-        type: store
+-
+-  - slug: personality-shift
+-    order: 21
+-    archived: true
+-    name: Personality Shift
+-    role: Геймплей и Level Designer
+-    year: "2021"
+-    description: Hyper-casual раннер для женской аудитории с трансформациями через смену образов, вдохновлёнными механикой shape-shifting.
+-    platforms: [Android]
+-    tags: [unity, mobile, hyper-casual, runner]
+-    stack: [Unity, C#]
+-    media:
+-      - type: image
+-        src: /media/projects/personality-shift/cover.png
+-        alt: "Personality Shift gameplay"
+-        featured: true
+-
+-  - slug: flower-king
+-    order: 22
+-    archived: true
+-    name: "Flower King: Collect and Grow"
+-    role: Level Designer
+-    year: "2020"
+-    description: Казуальная match-3 игра с вручную созданными уровнями и расслабляющей визуальной прогрессией на Unity.
+-    theme: emerald
+-    platforms: [Android, iOS]
+-    tags: [unity, mobile, casual, match3, level-design]
+-    stack: [Unity, C#]
+-    metrics:
+-      - label: Скачивания
+-        value: "50K+"
+-    links:
+-      - label: App Store
+-        url: https://apps.apple.com/app/flower-king-collect-and-grow/id1519456312
+-        type: store
+-      - label: APKPure
+-        url: https://apkpure.com/flower-king-collect-and-grow/com.flower.king.game
+-        type: store
+-    media:
+-      - type: image
+-        src: /media/projects/flower-king/cover.png
+-        alt: "Flower King: Collect and Grow gameplay"
+-        featured: true
+-
+-  - slug: park-them-all
+-    order: 23
+-    archived: true
+-    name: Park Them All
+-    role: Геймплей и Level Designer
+-    year: "2020"
+-    description: Hyper-casual симулятор парковки, где игрок размещает машины в правильные места с растущей сложностью уровней.
+-    platforms: [Android]
+-    tags: [unity, mobile, hyper-casual, simulation]
+-    stack: [Unity, C#]
+-    media:
+-      - type: image
+-        src: /media/projects/park-them-all/cover.png
+-        alt: "Park Them All gameplay"
+-        featured: true
+-
+-  - slug: candy-merge
+-    order: 24
+-    archived: true
+-    name: Candy Merge
+-    role: Геймплей и Level Designer
+-    year: "2020"
+-    description: Hyper-casual match-3 игра, объединённая с механикой merge в стиле 2048 и постепенным усложнением пазлов.
+-    platforms: [Android]
+-    tags: [unity, mobile, hyper-casual, casual, match3]
+-    stack: [Unity, C#]
+-    links:
+-      - label: Google Play
+-        url: https://play.google.com/store/search?q=Candy%20Merge&c=apps
+-        type: store
+-    media:
+-      - type: image
+-        src: /media/projects/candy-merge/cover.jpg
+-        alt: "Candy Merge gameplay"
+-        featured: true
+-
+-  - slug: break-stack-tower
+-    order: 25
+-    archived: true
+-    name: "Break Stack Tower"
+-    role: Геймплей и Level Designer
+-    year: "2020"
+-    description: Аркадная hyper-casual игра про разрушение башен с физикой разрушения и прогрессией уровней.
+-    platforms: [Android]
+-    tags: [unity, mobile, hyper-casual, arcade]
+-    stack: [Unity, C#]
+-    metrics:
+-      - label: Скачивания
+-        value: "50K+"
+-    links:
+-      - label: Google Play
+-        url: https://play.google.com/store/apps/details?id=com.towerbreak.app
+-        type: store
+-
+-  - slug: wonder-blast-alice-friends
+-    order: 26
+-    archived: true
+-    name: "Wonder Blast – Alice & Friends"
+-    role: Level Designer
+-    year: "2020"
+-    description: Alice in Wonderland themed cube‑match puzzle game built in Unity with large-scale level progression and puzzle balancing.
+-    theme: auto
+-    platforms: [iOS, Android]
+-    tags: [unity, mobile, puzzle, match3, level-design]
+-    stack: [Unity, C#]
+-    metrics:
+-      - label: Levels Designed
+-        value: "1500+"
+-      - label: Total Levels
+-        value: "2500 (incl. unreleased)"
+-    links:
+-      - label: APKPure
+-        url: https://apkpure.com/wonder-blast/com.popside.alice
+-        type: store
+-    media:
+-      - type: image
+-        src: /media/projects/wonder-blast-alice-friends/cover.png
+-        alt: "Wonder Blast gameplay"
+-        featured: true
+-
+-  - slug: solitaire-resort
+-    order: 27
+-    archived: true
+-    name: "Solitaire Resort"
+-    role: Level Designer & Game Balance Designer
+-    year: "2020"
+-    description: Mobile Tripeaks solitaire puzzle game featuring island progression, economy tuning and long-form level balancing.
+-    theme: auto
+-    platforms: [iOS, Android]
+-    tags: [unity, mobile, solitaire, puzzle, level-design]
+-    stack: [Unity, C#]
+-    metrics:
+-      - label: Levels Designed
+-        value: "500+"
+-    media:
+-      - type: image
+-        src: /media/projects/solitaire-resort/cover.png
+-        alt: "Solitaire Resort gameplay"
+-        featured: true
+-
+-  - slug: cookie-crush
+-    order: 28
+-    archived: true
+-    name: "Cookie Crush"
+-    role: Level Designer
+-    year: "2020"
+-    description: Match-3 candy puzzle game where I designed and balanced level progression, including proposing and prototyping new mechanics.
+-    theme: auto
+-    platforms: [Android]
+-    tags: [unity, mobile, puzzle, match3, level-design]
+-    stack: [Unity, C#]
+-    metrics:
+-      - label: Levels Designed
+-        value: "300+"
+-    links:
+-      - label: APKPure
+-        url: https://apkpure.net/cookie-crush-candy-match-3/com.guuby.candy
+-        type: store
+-
+-  - slug: helens-quiz
+-    order: 29
+-    archived: true
+-    name: Helens Quiz
+-    role: Gameplay & UI Designer
+-    year: "2019"
+-    description: Match-3 puzzle game with over 300 crafted levels, dynamic backgrounds and level progression systems built in Unity.
+-    theme: magenta
+-    platforms: [Android, iOS]
+-    tags: [unity, mobile, casual, match3, level-design]
+-    stack: [Unity, C#]
+-    metrics:
+-      - label: Downloads
+-        value: "50K+"
+-      - label: Levels
+-        value: "300+"
+-    links:
+-      - label: APKPure
+-        url: https://apkpure.com/helen-s-quiz/com.mkmx.helenq
+-        type: store
+-    media:
+-      - type: image
+-        src: /media/projects/helens-quiz/cover.png
+-        alt: "Helens Quiz gameplay screenshot"
+-        featured: true
+-
+-  - slug: westland
+-    order: 30
+-    archived: true
+-    name: Westland
+-    role: Gameplay Developer
+-    year: "2019"
+-    description: Isometric pixel-art top-down zombie shooter set in a brutal Wild West world, featuring heavy gore and fast-paced combat arenas.
+-    theme: cyan
+-    platforms: [Windows]
+-    tags: [gamemaker, shooter, pixel-art, prototype]
+-    stack: [GameMaker]
+-    metrics:
+-      - label: Type
+-        value: "Personal Project"
+-      - label: Status
+-        value: "Prototype"
+-    media:
+-      - type: image
+-        src: /media/projects/westland/cover.jpg
+-        alt: "Westland gameplay screenshot"
+-        featured: true
+-
+-  - slug: kalina-malina-delivery
+-    order: 31
+-    archived: true
+-    name: "Калина‑Малина: доставка еды"
+-    role: Mobile App Developer
+-    year: "2018"
+-    description: Mobile food and grocery delivery app with ordering, product catalog and loyalty system built in Unity.
+-    theme: cyan
+-    platforms: [Android, iOS]
+-    tags: [unity, mobile, ecommerce, delivery]
+-    stack: [Unity, C#]
+-    metrics:
+-      - label: Downloads
+-        value: "100K+"
+-    links:
+-      - label: App Store
+-        url: https://apps.apple.com/app/калина-малина-доставка-еды/id1597124884
+-        type: store
+-      - label: Google Play
+-        url: https://play.google.com/store/apps/details?id=com.getmeback.kalinamalina
+-        type: store
+-
+-  - slug: transport-railroad-crossing
+-    order: 32
+-    archived: true
+-    name: Transport Railroad Crossing
+-    role: Gameplay Designer & Developer
+-    year: "2018"
+-    description: Crossy Road–style arcade game featuring dynamic traffic logic and railway crossing systems with train-triggered vehicle stopping behavior.
+-    platforms: [Android]
+-    tags: [gamemaker, mobile, arcade, casual]
+-    stack: [GameMaker]
+-    metrics:
+-      - label: Type
+-        value: "Personal Project"
+-    media:
+-      - type: image
+-        src: /media/projects/transport-railroad-crossing/cover.jpeg
+-        alt: "Transport Railroad Crossing gameplay"
+-        featured: true
+-
+-  - slug: filtap
+-    order: 33
+-    archived: true
+-    name: "Filtap!"
+-    role: Game Developer
+-    year: "2018"
+-    description: Single-mechanic mobile puzzle built in GameMaker Studio, released on Android.
+-    theme: emerald
+-    platforms: [Android]
+-    stack: [GameMaker Studio]
+-    links:
+-      - label: APKTurbo
+-        url: https://www.apkturbo.com/games/filtap/com.zef.filtap/
+-        type: store
+-    media:
+-      - type: image
+-        src: /media/projects/filtap/cover.jpg
+-        alt: "Filtap! cover"
+-        featured: true
+-
+-  - slug: box-keeper
+-    order: 34
+-    archived: true
+-    name: Box Keeper
+-    role: Game Developer
+-    year: "2018"
+-    description: Mobile roguelike built in GameMaker Studio with a focused core loop and replayable runs. Shipped primarily for iOS with an Android build.
+-    theme: magenta
+-    platforms: [iOS, Android]
+-    tags: [gamemaker, mobile, roguelike, puzzle]
+-    stack: [GameMaker Studio]
+-    links:
+-      - label: APKTurbo
+-        url: https://www.apkturbo.com/games/box-keeper/com.dgs.bkeep/
+-        type: store
+-      - label: App Store
+-        url: https://apps.apple.com/us/search?term=Box%20Keeper
+-        type: store
+-    media:
+-      - type: image
+-        src: /media/projects/box-keeper/cover.png
+-        alt: "Box Keeper cover"
+-        featured: true
+-
+-  - slug: wrap
+-    order: 35
+-    archived: true
+-    name: "Wrap!"
+-    role: Game Developer
+-    year: "2017"
+-    description: Minimal one-mechanic puzzle built in GameMaker Studio, shipped on Android and iOS.
+-    theme: blue
+-    platforms: [Android, iOS]
+-    stack: [GameMaker Studio]
+-    media:
+-      - type: image
+-        src: /media/projects/wrap/cover.jpg
+-        alt: "Wrap! cover"
+-        featured: true
+-
+-  - slug: recolor
+-    order: 36
+-    archived: true
+-    name: Recolor
+-    role: Game Developer
+-    year: "2017"
+-    description: Minimal one-mechanic puzzle built in GameMaker Studio, shipped on Android and iOS.
+-    theme: blue
+-    platforms: [Android, iOS]
+-    stack: [GameMaker Studio]
+-    media:
+-      - type: image
+-        src: /media/projects/recolor/cover.jpg
+-        alt: "Recolor cover"
+-        featured: true
+-
+-  - slug: make-it-work
+-    order: 37
+-    archived: true
+-    name: "Make It Work!"
+-    role: Game Developer
+-    year: "2016"
+-    description: Small vector-driven Game Maker Studio clicker with focus on early mobile platforms.
+-    theme: magenta
+-    platforms: [iOS, Android, Amazon]
+-    tags: [gamemaker, mobile, clicker, casual]
+-    stack: [GameMaker Studio]
+-    links:
+-      - label: Amazon Appstore
+-        url: https://www.amazon.co.jp/DragonGameStudios-Make-it-Work/dp/B07CK73BXC
+-        type: store
+-      - label: APKTurbo
+-        url: https://www.apkturbo.com/games/make-it-work/com.dgs.miwfull/
+-        type: store
+-    media:
+-      - type: image
+-        src: /media/projects/make-it-work/cover.jpg
+-        alt: "Make It Work! clicker gameplay"
+-        featured: true
+\ No newline at end of file

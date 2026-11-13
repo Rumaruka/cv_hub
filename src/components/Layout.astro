@@ -116,7 +116,7 @@ const upstreamGit = 'https://github.com/KeeGooRoomiE/cv_hub';
 // Derived from GITHUB_REPOSITORY (same as siteUrl above) instead of hardcoded
 // — a fork's footer credit points at itself, not at the original repo.
 const authorGit = repo ? `https://github.com/${repo}` : upstreamGit;
-const authorGitHubPage = owner ? `https://github.com/${owner}/` : 'https://github.com/KeeGooRoomiE/';
+const authorGitHubPage = owner ? `https://github.com/${owner}/` : 'https://github.com/Rumaruka/';
 // "Made with CV Hub" always targets upstreamGit (see below) — on the
 // upstream repo itself that's the same URL as the GitHub link right next to
 // it, which is just noise (two links, same href, different labels). Only
@@ -286,7 +286,7 @@ const jsonLdSafe = jsonLd ? JSON.stringify(jsonLd).replace(/</g, '\\u003c') : nu
     <footer class="footer">
       <div class="container footer__inner">
         <span><a href={authorGitHubPage} target="_blank" rel="noopener" class="footer__link">
-          Alexander Gusarov
+          Vladimir Prikhodko
         </a> © {currentYear}</span>
         <span class="footer__links">
           {showFooterCredit && (
