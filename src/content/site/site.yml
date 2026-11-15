@@ -45,4 +45,4 @@ downloads:
 # point: every deployed site becomes a discoverable backlink, which is how
 # templates like this one actually grow. On by default; set to false to
 # remove it (no judgment either way — it's your footer).
-footerCredit: true
+footerCredit: false

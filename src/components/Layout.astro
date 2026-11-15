@@ -198,7 +198,7 @@ const jsonLdSafe = jsonLd ? JSON.stringify(jsonLd).replace(/</g, '\\u003c') : nu
     <AnimatedBackground />
     <header class="header">
       <div class="container header__row">
-        <a class="brand" href={homeHref}>CV Hub</a>
+
 
         <nav class="nav">
           <a href={homeHref}>{t('nav.home')}</a>
@@ -294,9 +294,6 @@ const jsonLdSafe = jsonLd ? JSON.stringify(jsonLd).replace(/</g, '\\u003c') : nu
               Made with CV Hub
             </a>
           )}
-          <a href={authorGit} target="_blank" rel="noopener" class="footer__link">
-            GitHub
-          </a>
         </span>
       </div>
     </footer>
